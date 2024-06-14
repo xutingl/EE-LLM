@@ -170,13 +170,11 @@ For other parallelism degrees, you can use `./tools/convert_parallelism.sh` to c
 ## BibTeX
 
 ```bibtex
-@misc{chen2023eellm,
+@inproceedings{chen2023eellm,
     title={EE-LLM: Large-Scale Training and Inference of Early-Exit Large Language Models with 3D Parallelism},
     author={Yanxi Chen and Xuchen Pan and Yaliang Li and Bolin Ding and Jingren Zhou},
-    year={2023},
-    eprint={2312.04916},
-    archivePrefix={arXiv},
-    primaryClass={cs.LG}
+    year={2024},
+    booktitle={The Forty-first International Conference on Machine Learning},
 }
 ```
 
