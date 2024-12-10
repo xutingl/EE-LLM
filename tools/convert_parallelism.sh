@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # load/save dir
-LOAD_DIR=
-SAVE_DIR=
+LOAD_DIR=/home/xutingl/ee/EE-LLM/models/EE-LLM-1B-dj-refine-300B/
+SAVE_DIR=/home/xutingl/ee/EE-LLM/models/EE-LLM-1B-TP4-PP1/
 
 # target parallelism
-TP=
-PP=
+TP=4
+PP=1
 
 CUR_DIR=$(cd $(dirname "$0") && pwd)
 MEGATRON_ROOT_PATH=$(cd "$CUR_DIR/.." && pwd)

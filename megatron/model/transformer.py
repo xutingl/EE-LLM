@@ -1492,6 +1492,7 @@ class EarlyExitTransformerLayer(MegatronModule):
                 exit_process_func=None,
                 exit_loss_func=None):
         if self.pre_exit:
+            print(f"Pre exit; Hidden states size: {hidden_states.size()}")
             exit_output, exit = self._forward_exit(hidden_states=hidden_states,
                                                    inference_params=inference_params,
                                                    exit_process_func=exit_process_func,
@@ -1509,6 +1510,7 @@ class EarlyExitTransformerLayer(MegatronModule):
         else:
             exit_hidden_states = hidden_states
         if not self.pre_exit:
+            print(f"Not pre exit; Hidden states size: {hidden_states.size()}")
             exit_output, exit = self._forward_exit(hidden_states=exit_hidden_states,
                                                    inference_params=inference_params,
                                                    exit_process_func=exit_process_func,

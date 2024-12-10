@@ -154,7 +154,8 @@ def generate_tokens_probs_and_return_on_first_stage(
                                        use_early_exit=use_early_exit,
                                        print_max_prob=print_max_prob,
                                        exit_layers=exit_layers)
-
+    
+    print("batch_size", batch_size)
     # forward step.
     forward_step = ForwardStep(model, inference_params=inference_params)
 
@@ -543,7 +544,10 @@ def generate_with_pipelined_early_exit_and_return_on_first_stage(
     # Run infernece
     # =============
 
+    print("????????????????????")
+
     with torch.no_grad():
+        print("#########################")
         attention_mask, position_ids = _build_attention_mask_and_position_ids(
             tokens)
         prev_context_length = 0
@@ -571,6 +575,14 @@ def generate_with_pipelined_early_exit_and_return_on_first_stage(
                 if print_max_prob:
                     print(f"layer final: token [{token}], prob {float(torch.exp(max_log_prob[-1]))}")
                 inference_params.has_early_exited = max_log_prob[-1] >= inference_params.early_exit_thres
+                # Printout the max prob
+                print("!!!!!!!")
+                print(inference_params.has_early_exited)
+                print("!!!!!!!")
+                if inference_params.has_early_exited:
+                    print("-----------------")
+                    print(f"max log prob: {max_log_prob[-1]}, early exit thres: {inference_params.early_exit_thres}")
+                    print("-----------------")
                 new_sample = sample(last_token_logits,
                                     top_k=top_k,
                                     top_p=top_p,

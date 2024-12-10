@@ -6,12 +6,12 @@ export OMP_NUM_THREADS=8
 export CUDA_DEVICE_MAX_CONNECTIONS=1
 
 # Tokenizer
-TOKENIZER_PATH=
+TOKENIZER_PATH=/home/xutingl/ee/EE-LLM/models/EE-LLM-1B-dj-refine-300B/tokenizer.model
 # Checkpoint
-CHECKPOINT_PATH=
+CHECKPOINT_PATH=/home/xutingl/ee/EE-LLM/models/EE-LLM-1B-TP1-PP1/
 # Parallelism
-TP=
-PP=
+TP=1
+PP=1
 # Server port
 PORT=5000
 

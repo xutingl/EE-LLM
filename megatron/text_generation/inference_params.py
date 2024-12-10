@@ -56,9 +56,14 @@ class InferenceParams:
         log_probs = F.log_softmax(last_token_logits, dim=1)
         max_log_prob, token_id =  torch.max(log_probs[:, :], dim=1)
         token = self.tokenizer.detokenize([int(token_id[-1])])
-        if self.print_max_probs:
-            print(f"layer [{layer_num}]: token [{token}], prob {float(torch.exp(max_log_prob[-1]))}")
         self.has_early_exited = max_log_prob[-1] >= self.early_exit_thres
+        if self.print_max_probs:
+            # print(f"layer [{layer_num}]: token [{token}], prob {float(torch.exp(max_log_prob[-1]))}")
+            print(f"layer [{layer_num}], has_early_exited: {self.has_early_exited}, threshold {self.early_exit_thres}. Printing below   token: raw prob")
+            for i in range(len(max_log_prob)):
+                print(f"{self.tokenizer.detokenize([int(token_id[i])])}: {max_log_prob[i]}")
+            print(f"=============== tokens above has_early_exited: {self.has_early_exited} ======================")
+            print()
         if self.use_pipeline_inference and self.has_early_exited:
             # send token and probs to the first stage
             tokens, probs = self.get_tokens_and_probs(last_token_logits)

@@ -1,0 +1,3134 @@
+Request:-------------------------------------------------
+how can identity protection services help protect me against identity theft
+Response:------------------(5.2992s)-------------------
+?
+Identity theft is a growing problem. In 2017, the Federal Trade Commission (FTC) reported that 1 in 5 Americans were victims of identity theft. The FTC estimates that the cost of identity theft to consumers is $10 billion per year.
+Identity theft is a crime that can happen to anyone. It can happen to you, your spouse, your children, your friends, your coworkers, your neighbors
+----------------------------------------------------------
+Request:-------------------------------------------------
+Beside OFAC's selective sanction that target the listed individiuals and entities, please elaborate on the other types of US's sanctions, for example, comprehensive and sectoral sanctions. Please be detailed as much as possible
+Response:------------------(3.0726s)-------------------
+.
+The US has a comprehensive sanctions regime that targets the Iranian regime's proxies, terrorist groups, and entities. The US has also imposed comprehensive sanctions on the Iranian regime's proxies, terrorist groups, and entities.
+The US has a comprehensive sanctions regime that targets the Iranian regime's proxies, terrorist groups, and entities. The US has also imposed comprehensive sanctions on the Iran
+----------------------------------------------------------
+Request:-------------------------------------------------
+The sum of the perimeters of three equal squares is 36 cm. Find the area and perimeter of
+of the rectangle that can be made of the squares.
+Response:------------------(3.1943s)-------------------
+
+A rectangle with sides of length 10 cm and width 10 cm is made of the following rectangles:
+Rectangle 1: 10 cm x 10 cm
+Rectangle 2: 10 cm x 10 cm
+Rectangle 3: 10 cm x 10 cm
+The perimeter of the rectangle is 10 cm.
+The area of the rectangle is 10 cm2.
+The perimeter
+----------------------------------------------------------
+Request:-------------------------------------------------
+You are the text completion model and you must complete the assistant answer below, only send the completion based on the system instructions.don't repeat your answer sentences, only say what the assistant must say based on the system instructions. repeating same thing in same answer not allowed.
+user: descriptive answer for append many items to list python in python with proper code examples and outputs.
+assistant: 
+Response:------------------(2.5011s)-------------------
+100% correct answer for append many items to list python in python with proper code examples and outputs.
+user: descriptive answer for append many items to list python in python with proper code examples and outputs.
+assistant: 100% correct answer for append many items to list python in python with proper code examples and outputs.
+user: descriptive answer for append many items to list python in python with proper code examples and outputs.
+assistant: 10
+----------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+request IP: 127.0.0.1
+{"prompts": ["how can identity protection services help protect me against identity theft"], "tokens_to_generate": 100, "top_k": 1, "logprobs": true, "random_seed": 42, "echo_prompts": false, "early_exit_thres": 0.8, "exit_layers": [], "use_early_exit": true, "print_max_prob": true, "top_p": 0, "top_p_decay": 0.0, "top_p_bound": 0.0, "temperature": 0.0, "add_BOS": false, "stop_sequences": null, "prevent_newline_after_colon": false, "length_penalty": 1}
+start time:  2024-12-05 15:04:27.116856
+batch_size 1
+Not pre exit; Hidden states size: torch.Size([12, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+?: -1.06382417678833
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([12, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+?: -0.4940774440765381
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+
+: -0.5323539972305298
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+
+: -0.30874839425086975
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+I: -2.814098596572876
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+Identity: -1.8720563650131226
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+the: -1.468619704246521
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+the: -0.805019199848175
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+ft: -1.3947389561508317e-05
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+is: -0.6199750304222107
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+is: -0.5820193886756897
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+a: -0.8794219493865967
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+a: -0.7880878448486328
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+serious: -1.6131911277770996
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+serious: -1.5011208057403564
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+problem: -0.6342166662216187
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+problem: -0.6007749438285828
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+in: -1.6638894081115723
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+in: -1.624873399734497
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+It: -2.4661247730255127
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+According: -2.3788928985595703
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+fact: -1.2984145879745483
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+: -1.1020290851593018
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+2: -0.046565812081098557
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+0: -0.001134705264121294
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+1: -0.18599681556224823
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([4, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+3: -2.062622547149658
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([4, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+7: -1.9268851280212402
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+,: -0.3667726516723633
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+,: -0.30940860509872437
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+: -1.3641269207000732
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+the: -1.3470960855484009
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+U: -1.879136562347412
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+Identity: -1.9537229537963867
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+Trade: -0.1808105707168579
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+Commission: -0.006444268394261599
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+(: -1.2078700065612793
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+reported: -1.1535600423812866
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+FT: -0.01631726697087288
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+C: -0.0005448763840831816
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+): -0.023449132218956947
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([4, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+reported: -2.563420295715332
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([4, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+reported: -0.7649236917495728
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+that: -0.3250942528247833
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+that: -0.2848145663738251
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+: -1.0048917531967163
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+: -1.5073127746582031
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+1: -1.477671504020691
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+1: -1.4489389657974243
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+in: -0.9525472521781921
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+in: -1.0468189716339111
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+: -0.07628047466278076
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+5: -1.3547301292419434
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+5: -1.2832807302474976
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+Americans: -1.2950379848480225
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+Americans: -0.9207167625427246
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+had: -2.1829333305358887
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+had: -1.9285590648651123
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+vict: -1.3344966173171997
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+vict: -0.43740352988243103
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+ims: -0.0001736728590913117
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+of: -0.020028846338391304
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+identity: -0.08203214406967163
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([4, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+the: -0.01903505064547062
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([5, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+ft: -9.775113539944869e-06
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([6, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+.: -0.636709451675415
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([6, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+.: -0.7429497241973877
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+The: -2.0874156951904297
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+
+: -2.247807741165161
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+F: -1.5122816562652588
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+F: -1.0608402490615845
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+TC: -0.04588810354471207
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+': -2.134979486465454
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+also: -2.1034412384033203
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+that: -0.0984974354505539
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+: -1.168974757194519
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+: -2.013918399810791
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+number: -1.6990134716033936
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+cost: -1.7372677326202393
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+of: -0.36531373858451843
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+of: -0.18466132879257202
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+identity: -0.5131018161773682
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [12], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+identity: -0.16308584809303284
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+the: -0.1463644802570343
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([4, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+ft: -2.4676019165781327e-05
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([5, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+is: -1.5783624649047852
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([5, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+to: -1.5055991411209106
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+the: -1.3441983461380005
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+the: -0.6885106563568115
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+ers: -7.283422019099817e-05
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+is: -1.0822961330413818
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+is: -1.0235254764556885
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+$: -0.4851353168487549
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+$: -0.807317852973938
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+1: -1.2810348272323608
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+1: -1.2326126098632812
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+0: -2.021833896636963
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+0: -2.0414340496063232
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+0: -1.0594403743743896
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+0: -1.2193021774291992
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+a: -1.5595096349716187
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+ann: -1.4463205337524414
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+year: -0.006604509893804789
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+.: -0.39569804072380066
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+.: -0.34942981600761414
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+
+: -1.3367489576339722
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+
+: -1.123734474182129
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+Identity: -1.4494582414627075
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+Identity: -1.2635456323623657
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+the: -0.1575029492378235
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+ft: -2.2291887944447808e-05
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+is: -0.7132176160812378
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+is: -1.0110375881195068
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+a: -1.0209429264068604
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+a: -0.9639469385147095
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+serious: -2.0016846656799316
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+serious: -1.8777048587799072
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+that: -0.9205482006072998
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+that: -1.0856143236160278
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+can: -1.247085690498352
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+can: -1.704296588897705
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+be: -1.2604233026504517
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+have: -1.727765679359436
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+to: -0.44655609130859375
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+to: -0.1840982288122177
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+anyone: -0.11735421419143677
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+.: -0.8100792765617371
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+.: -0.8296721577644348
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+It: -2.1028006076812744
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+It: -1.8205065727233887
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+can: -0.9398703575134277
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+can: -1.2730703353881836
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+be: -0.7938547730445862
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+be: -1.1390109062194824
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+to: -0.37249955534935
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+to: -0.22077420353889465
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+anyone: -0.36148616671562195
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+you: -0.8882176876068115
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+,: -1.2595391273498535
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+,: -1.0818195343017578
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+too: -1.5996445417404175
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+your: -0.9613719582557678
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+family: -1.1755070686340332
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+family: -0.902899980545044
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+ouse: -0.0022168601863086224
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+,: -0.23125314712524414
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [12], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+,: -0.1943650245666504
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+your: -0.6272768378257751
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+your: -0.5511602759361267
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+children: -0.9289753437042236
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+children: -1.2034165859222412
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+,: -0.22810454666614532
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+,: -0.2032247930765152
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+your: -0.7160087823867798
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+your: -0.6739418506622314
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+sp: -1.147848129272461
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+friends: -1.9134302139282227
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+,: -0.34739619493484497
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+,: -0.26502564549446106
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+your: -0.8563948273658752
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+your: -0.6679692268371582
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+sp: -1.9281524419784546
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+employees: -1.9430994987487793
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+ork: -0.0008027906878851354
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+ers: -0.028779327869415283
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+,: -0.3534668982028961
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+,: -0.299897164106369
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+your: -0.7352100610733032
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+your: -0.7603964805603027
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+employ: -2.2356390953063965
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+neighb: -2.0518710613250732
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+ors: -0.023739391937851906
+=============== tokens above has_early_exited: True ======================
+
+Response(use 5.280831575393677s): ['?\nIdentity theft is a growing problem. In 2017, the Federal Trade Commission (FTC) reported that 1 in 5 Americans were victims of identity theft. The FTC estimates that the cost of identity theft to consumers is $10 billion per year.\nIdentity theft is a crime that can happen to anyone. It can happen to you, your spouse, your children, your friends, your coworkers, your neighbors']
+request IP: 127.0.0.1
+{"prompts": ["Beside OFAC's selective sanction that target the listed individiuals and entities, please elaborate on the other types of US's sanctions, for example, comprehensive and sectoral sanctions. Please be detailed as much as possible"], "tokens_to_generate": 100, "top_k": 1, "logprobs": true, "random_seed": 42, "echo_prompts": false, "early_exit_thres": 0.8, "exit_layers": [], "use_early_exit": true, "print_max_prob": true, "top_p": 0, "top_p_decay": 0.0, "top_p_bound": 0.0, "temperature": 0.0, "add_BOS": false, "stop_sequences": null, "prevent_newline_after_colon": false, "length_penalty": 1}
+start time:  2024-12-05 15:04:32.408372
+batch_size 1
+Not pre exit; Hidden states size: torch.Size([51, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+.: -1.3766648769378662
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([51, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+.: -1.029428243637085
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+
+: -0.5320382118225098
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+
+: -0.6808507442474365
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+The: -2.6287646293640137
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+The: -2.894737720489502
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+US: -2.264056921005249
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+US: -1.7943638563156128
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+has: -2.2305428981781006
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+has: -1.9366199970245361
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+a: -2.783214807510376
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+a: -2.3739819526672363
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+long: -2.590240955352783
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+wide: -2.26385760307312
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+ensive: -0.008917388506233692
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+san: -1.0288358926773071
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+and: -1.3584948778152466
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+ctions: -0.32129165530204773
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+ctions: -0.04705064743757248
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+regime: -1.3443176746368408
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+regime: -0.9593617916107178
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+,: -1.7586331367492676
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+,: -1.6092063188552856
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+includes: -1.770187258720398
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+targets: -1.5740197896957397
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+individuals: -1.632920265197754
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+the: -2.0471713542938232
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+listed: -1.745205283164978
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+listed: -2.321625232696533
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+ian: -0.16889391839504242
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+regime: -1.6506741046905518
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+regime: -1.8127918243408203
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+,: -1.378045916557312
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+': -1.446961760520935
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+s: -0.001520192832686007
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+activities: -2.5369369983673096
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+financial: -3.019092559814453
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+x: -0.568427324295044
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+x: -0.2451687455177307
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+ies: -0.003916214685887098
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+and: -1.2106034755706787
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+,: -1.086075782775879
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+including: -1.7276362180709839
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+including: -2.459993600845337
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+ist: -0.4311846196651459
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+ist: -0.5061439275741577
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+organizations: -0.9503076076507568
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+groups: -0.8256479501724243
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+,: -0.38876572251319885
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+,: -0.35408711433410645
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+and: -1.0878353118896484
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+and: -0.8271203637123108
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+individuals: -2.249624013900757
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+individuals: -2.1044154167175293
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+.: -1.0648002624511719
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+.: -1.5079631805419922
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+The: -1.726068377494812
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+The: -1.6212692260742188
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+US: -1.3090189695358276
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+US: -1.3523446321487427
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+has: -1.2320401668548584
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+has: -1.1578835248947144
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+a: -1.581676959991455
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+also: -1.593693494796753
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+a: -2.062936782836914
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+san: -2.5109691619873047
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+posed: -0.0019160023657605052
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+san: -1.4773091077804565
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+a: -1.777030348777771
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+ensive: -0.017218273133039474
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+san: -0.12452320009469986
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+ctions: -0.005940638016909361
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([4, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+on: -0.4859200716018677
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([4, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+on: -0.4838795065879822
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+Iran: -1.4290598630905151
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+Iran: -0.7776032090187073
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+Iran: -0.9051782488822937
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+Iran: -0.6379685997962952
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+ian: -0.03688017651438713
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+regime: -0.4921625852584839
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+regime: -1.173885703086853
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+': -0.16453135013580322
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+s: -0.0005318895564414561
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+pro: -2.3417930603027344
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+pro: -2.5106430053710938
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+x: -0.003832021960988641
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+ies: -0.0004881620698142797
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+,: -0.6696580648422241
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+,: -0.6220715045928955
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+terror: -0.8239462971687317
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+terror: -0.3786279857158661
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+ist: -0.03721124306321144
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+groups: -0.23440337181091309
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [12], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+groups: -0.031051017343997955
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+,: -0.04180875048041344
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([4, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+and: -0.05156293883919716
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([5, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+entities: -0.04147302731871605
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([6, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+.: -0.4837803840637207
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([6, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+.: -1.1018002033233643
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+The: -1.3975183963775635
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+The: -1.454911231994629
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+The: -1.2060130834579468
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+The: -1.3355722427368164
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+US: -0.8362118601799011
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+US: -0.520596444606781
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+has: -0.6406111121177673
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+has: -0.40160393714904785
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+also: -1.581097960472107
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+a: -1.1787523031234741
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+compreh: -0.12291628867387772
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+ensive: -0.004741970915347338
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+san: -0.16853028535842896
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([4, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+ctions: -0.018252387642860413
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([5, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+regime: -0.0837591215968132
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([6, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+that: -0.3223859667778015
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([6, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+that: -0.3340522348880768
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+targets: -0.16742537915706635
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+the: -0.4269842505455017
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [12], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+the: -0.19002456963062286
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+Iran: -0.34576699137687683
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [12], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+Iran: -0.01309262216091156
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([4, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+ian: -0.0157526396214962
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([5, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+regime: -0.10173376649618149
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([6, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+': -0.006943501997739077
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([7, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+s: -0.00037067217635922134
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([8, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+pro: -0.3906193673610687
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([8, 1, 2048])
+layer [12], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+pro: -0.02411312237381935
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([9, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+x: -0.0005819296347908676
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([10, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+ies: -0.0003053675754927099
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([11, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+,: -0.06933602690696716
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([12, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+terror: -0.028574176132678986
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([13, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+ist: -0.003705898066982627
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([14, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+groups: -0.038796018809080124
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([15, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+,: -0.0030415249057114124
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([16, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+and: -0.0029621317517012358
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([17, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+entities: -0.009526271373033524
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([18, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+.: -0.07575158774852753
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([19, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+The: -0.4288196861743927
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([19, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+The: -0.8847547769546509
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+US: -0.224970743060112
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+US: -0.08912375569343567
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+has: -0.10531281679868698
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+also: -0.09058672189712524
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([4, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+im: -0.020313791930675507
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([5, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+posed: -0.0002971446083392948
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([6, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+compreh: -0.029407378286123276
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([7, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+ensive: -0.0021077815908938646
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([8, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+san: -0.029786866158246994
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([9, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+ctions: -0.0017766657983884215
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([10, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+on: -0.017782075330615044
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([11, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+the: -0.1083141341805458
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([12, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+Iran: -0.037908513098955154
+=============== tokens above has_early_exited: True ======================
+
+Response(use 3.0627505779266357s): [".\nThe US has a comprehensive sanctions regime that targets the Iranian regime's proxies, terrorist groups, and entities. The US has also imposed comprehensive sanctions on the Iranian regime's proxies, terrorist groups, and entities.\nThe US has a comprehensive sanctions regime that targets the Iranian regime's proxies, terrorist groups, and entities. The US has also imposed comprehensive sanctions on the Iran"]
+request IP: 127.0.0.1
+{"prompts": ["The sum of the perimeters of three equal squares is 36 cm. Find the area and perimeter of\nof the rectangle that can be made of the squares."], "tokens_to_generate": 100, "top_k": 1, "logprobs": true, "random_seed": 42, "echo_prompts": false, "early_exit_thres": 0.8, "exit_layers": [], "use_early_exit": true, "print_max_prob": true, "top_p": 0, "top_p_decay": 0.0, "top_p_bound": 0.0, "temperature": 0.0, "add_BOS": false, "stop_sequences": null, "prevent_newline_after_colon": false, "length_penalty": 1}
+start time:  2024-12-05 15:04:35.480614
+batch_size 1
+Not pre exit; Hidden states size: torch.Size([36, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+
+: -0.6475604176521301
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([36, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+
+: -0.32012370228767395
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+
+: -1.3644185066223145
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+
+: -2.1979618072509766
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+square: -1.7717688083648682
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+rectangle: -1.6362314224243164
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+is: -0.6157671213150024
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+of: -1.4786100387573242
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+two: -2.0872647762298584
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+sides: -1.6980539560317993
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+of: -1.1793116331100464
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+of: -0.5451467633247375
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+: -0.9831161499023438
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+: -0.5692176222801208
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+: -0.5898421406745911
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+: -0.25930532813072205
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+1: -1.081836223602295
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+1: -1.4090102910995483
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+0: -1.021896481513977
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+0: -1.058750867843628
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+0: -1.1130781173706055
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+cm: -0.5833929777145386
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+and: -1.2408791780471802
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+and: -0.4910588264465332
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+width: -1.234587550163269
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+width: -0.8433947563171387
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+: -0.3120518922805786
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+: -0.20975765585899353
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+1: -1.055962085723877
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+2: -1.5412583351135254
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+0: -0.4188278019428253
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+0: -0.6275910139083862
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+cm: -0.058602359145879745
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+is: -1.0870952606201172
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+is: -0.6546558141708374
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+
+: -1.9359549283981323
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+made: -1.5103555917739868
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+of: -0.5304247736930847
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+of: -0.6276171207427979
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+the: -1.5127589702606201
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+: -1.595707893371582
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+same: -1.9796868562698364
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+squares: -0.7127756476402283
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+
+: -1.9997179508209229
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+rect: -1.0151413679122925
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+angles: -0.24088643491268158
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+angles: -0.2679622769355774
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+:: -0.5123904347419739
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+:: -0.42535537481307983
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+
+: -0.18206924200057983
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+1: -1.8272478580474854
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+(: -2.0389280319213867
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+angle: -0.5169560313224792
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+angle: -0.07746019959449768
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+: -1.2703351974487305
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+A: -0.6329247355461121
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+1: -0.17040807008743286
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+0: -0.45301657915115356
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+:: -1.7639391422271729
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+: -1.2210116386413574
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+: -1.6387887001037598
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+1: -1.1462444067001343
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+1: -1.3475379943847656
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+0: -0.455255925655365
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+0: -0.4915730953216553
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+cm: -0.24756918847560883
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+cm: -0.37429648637771606
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+
+: -1.9415618181228638
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+x: -1.0798250436782837
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+: -0.03759375214576721
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+1: -0.29972517490386963
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+1: -0.27215248346328735
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+0: -0.05432481691241264
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+cm: -0.026276294142007828
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+x: -1.052384376525879
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+
+: -0.5185403823852539
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+Rect: -0.13222986459732056
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+angle: -0.02071928232908249
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+: -0.008063028566539288
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([4, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+2: -0.015019779093563557
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([5, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+:: -0.018374817445874214
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([6, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+: -0.04723328351974487
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([7, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+1: -0.2615179419517517
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([7, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+1: -0.7310924530029297
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+0: -0.04164056107401848
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+cm: -0.020636258646845818
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+x: -0.006525280419737101
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([4, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+: -0.00275470525957644
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([5, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+1: -0.37257710099220276
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([5, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+1: -0.848798930644989
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+0: -0.010821232572197914
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+cm: -0.0043360027484595776
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+
+: -0.1539783626794815
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([4, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+Rect: -0.3530782163143158
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([4, 1, 2048])
+layer [12], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+Rect: -0.09782171249389648
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([5, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+angle: -0.0048049697652459145
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([6, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+: -0.006759989075362682
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([7, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+3: -0.02429359406232834
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([8, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+:: -0.008050375618040562
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([9, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+: -0.02983974479138851
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([10, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+1: -0.14810535311698914
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([11, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+0: -0.02097134478390217
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([12, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+cm: -0.014488374814391136
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([13, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+x: -0.008233060128986835
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([14, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+: -0.002442236291244626
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([15, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+1: -0.1290869116783142
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([16, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+0: -0.006824399810284376
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([17, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+cm: -0.0038798784371465445
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([18, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+
+: -0.20506004989147186
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([19, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+Rect: -0.9374688863754272
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([19, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+Rect: -2.111172914505005
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+area: -1.3518211841583252
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+area: -1.182192325592041
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+imeter: -0.0256692785769701
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+of: -0.13968883454799652
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+the: -0.5915298461914062
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+rectangle: -0.8315865993499756
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+rectangle: -0.24427752196788788
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+rectangle: -0.10771973431110382
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+is: -0.9741927981376648
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+is: -0.6265128254890442
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+: -0.38921648263931274
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+: -0.2832822799682617
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+1: -1.1475441455841064
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+1: -1.3252625465393066
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+0: -0.45420801639556885
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+0: -1.0227699279785156
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+cm: -0.08332697302103043
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+.: -0.5380645394325256
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+.: -0.30276694893836975
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+
+: -0.8582834005355835
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+
+: -0.7452471852302551
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+The: -1.3594149351119995
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+The: -1.6394190788269043
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+per: -1.10451078414917
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+area: -1.1354293823242188
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+of: -0.4487951695919037
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+of: -0.13254952430725098
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+the: -0.47753065824508667
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+the: -0.3649894595146179
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+rectangle: -0.24428041279315948
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+rectangle: -0.0948115661740303
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+is: -0.5539550185203552
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [12], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+is: -0.09784581512212753
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+: -0.4068876802921295
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [12], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+: -0.1552789956331253
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([4, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+1: -0.8070752620697021
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([4, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+1: -1.2967758178710938
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+0: -0.25003501772880554
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+0: -0.5486127138137817
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+cm: -0.0878833681344986
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+.: -0.9718364477157593
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+2: -1.068727731704712
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+.: -0.29669782519340515
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+.: -0.16697213053703308
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+
+: -0.3565600514411926
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [12], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+
+: -0.07586640864610672
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+The: -0.8098269701004028
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+The: -1.0134718418121338
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+per: -0.6690539717674255
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+per: -0.6622560024261475
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+imeter: -0.015197672881186008
+=============== tokens above has_early_exited: True ======================
+
+Response(use 3.1857187747955322s): ['\nA rectangle with sides of length 10 cm and width 10 cm is made of the following rectangles:\nRectangle 1: 10 cm x 10 cm\nRectangle 2: 10 cm x 10 cm\nRectangle 3: 10 cm x 10 cm\nThe perimeter of the rectangle is 10 cm.\nThe area of the rectangle is 10 cm2.\nThe perimeter']
+request IP: 127.0.0.1
+{"prompts": ["You are the text completion model and you must complete the assistant answer below, only send the completion based on the system instructions.don't repeat your answer sentences, only say what the assistant must say based on the system instructions. repeating same thing in same answer not allowed.\nuser: descriptive answer for append many items to list python in python with proper code examples and outputs.\nassistant: "], "tokens_to_generate": 100, "top_k": 1, "logprobs": true, "random_seed": 42, "echo_prompts": false, "early_exit_thres": 0.8, "exit_layers": [], "use_early_exit": true, "print_max_prob": true, "top_p": 0, "top_p_decay": 0.0, "top_p_bound": 0.0, "temperature": 0.0, "add_BOS": false, "stop_sequences": null, "prevent_newline_after_colon": false, "length_penalty": 1}
+start time:  2024-12-05 15:04:38.676511
+batch_size 1
+Not pre exit; Hidden states size: torch.Size([82, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+1: -1.5771490335464478
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([82, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+1: -1.053074598312378
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+0: -1.4528626203536987
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+0: -1.1584248542785645
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+0: -0.8176043033599854
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+0: -0.9077654480934143
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+%: -0.7087809443473816
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+%: -0.7989487051963806
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+correct: -2.5518553256988525
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+correct: -2.3147568702697754
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+answer: -0.4207276999950409
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+answer: -0.8841679692268372
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+.: -1.621800184249878
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+for: -0.6849339604377747
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+the: -2.4307329654693604
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+append: -2.3460853099823
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+many: -1.6229733228683472
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+many: -0.48968666791915894
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+items: -0.15501011908054352
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+to: -0.058990370482206345
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+list: -0.02754523605108261
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([4, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+python: -0.07117874920368195
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([5, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+in: -0.24064065515995026
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([5, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+in: -0.4515525996685028
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+python: -0.01603810116648674
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+with: -0.16076964139938354
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+proper: -0.09394388645887375
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([4, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+code: -0.03614574298262596
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([5, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+examples: -0.03849656134843826
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([6, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+and: -0.03966841474175453
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([7, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+outputs: -0.017203157767653465
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([8, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+.: -0.01328356470912695
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([9, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+
+: -0.1780335009098053
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([10, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+ass: -2.1104862689971924
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([10, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+user: -2.0585544109344482
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+:: -0.031072396785020828
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+: -1.3516334295272827
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+: -1.8360105752944946
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+ive: -0.004019397310912609
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+answer: -0.03065328113734722
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+for: -0.058646202087402344
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([4, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+append: -0.22599421441555023
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([4, 1, 2048])
+layer [12], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+append: -0.14437957108020782
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([5, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+many: -0.38638949394226074
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([5, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+many: -0.304022878408432
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+items: -0.04589026793837547
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+to: -0.02065926231443882
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+list: -0.041800517588853836
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([4, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+python: -0.04017676040530205
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([5, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+in: -0.10554444044828415
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([6, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+python: -0.00867786817252636
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([7, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+with: -0.05839233100414276
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([8, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+proper: -0.1385376751422882
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([9, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+code: -0.03421352058649063
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([10, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+examples: -0.043204180896282196
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([11, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+and: -0.026338880881667137
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([12, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+outputs: -0.021794456988573074
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([13, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+.: -0.006350575014948845
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([14, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+
+: -0.11031784862279892
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([15, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+ass: -0.939682126045227
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([15, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+ass: -1.0820741653442383
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+istant: -0.007071467116475105
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+:: -0.020135987550020218
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+: -0.5693590044975281
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+: -0.5188624858856201
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+1: -0.49340105056762695
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+1: -0.2394644320011139
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+0: -0.045766834169626236
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+0: -0.010242636315524578
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+%: -0.007969013415277004
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([4, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+correct: -0.03133803978562355
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([5, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+answer: -0.015096223913133144
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([6, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+for: -0.03306351229548454
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([7, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+append: -0.03077547252178192
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([8, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+many: -0.11615930497646332
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([9, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+items: -0.014315877109766006
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([10, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+to: -0.009254179894924164
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([11, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+list: -0.03696036711335182
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([12, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+python: -0.012413972057402134
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([13, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+in: -0.016688857227563858
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([14, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+python: -0.006647023372352123
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([15, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+with: -0.02715248428285122
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([16, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+proper: -0.0648055300116539
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([17, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+code: -0.008703039959073067
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([18, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+examples: -0.027723003178834915
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([19, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+and: -0.01029242854565382
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([20, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+outputs: -0.008820618502795696
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([21, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+.: -0.0021030232310295105
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([22, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+
+: -0.09335488080978394
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([23, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+user: -1.4163895845413208
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([23, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+user: -0.5126181840896606
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+:: -0.007130531594157219
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+descript: -0.37338146567344666
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+descript: -1.333103060722351
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+ive: -0.002646160777658224
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+answer: -0.01065163966268301
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+for: -0.02395601198077202
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([4, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+append: -0.04271610453724861
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([5, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+many: -0.09052509069442749
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([6, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+items: -0.012321896851062775
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([7, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+to: -0.008887022733688354
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([8, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+list: -0.03761717304587364
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([9, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+python: -0.01657138019800186
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([10, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+in: -0.01811249926686287
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([11, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+python: -0.008794385939836502
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([12, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+with: -0.028471874073147774
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([13, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+proper: -0.09239736199378967
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([14, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+code: -0.010158620774745941
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([15, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+examples: -0.027865959331393242
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([16, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+and: -0.010348236188292503
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([17, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+outputs: -0.01406354084610939
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([18, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+.: -0.0016918168403208256
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([19, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+
+: -0.08541931211948395
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([20, 1, 2048])
+layer [6], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+ass: -0.7136129140853882
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([20, 1, 2048])
+layer [12], has_early_exited: False, threshold -0.22314353641304868. Printing below   token: raw prob
+ass: -0.46597132086753845
+=============== tokens above has_early_exited: False ======================
+
+Not pre exit; Hidden states size: torch.Size([1, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+istant: -0.0029541682451963425
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([2, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+:: -0.006420342717319727
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([3, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+: -0.19542410969734192
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([4, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+1: -0.11675688624382019
+=============== tokens above has_early_exited: True ======================
+
+Not pre exit; Hidden states size: torch.Size([5, 1, 2048])
+layer [6], has_early_exited: True, threshold -0.22314353641304868. Printing below   token: raw prob
+0: -0.008872372098267078
+=============== tokens above has_early_exited: True ======================
+
+Response(use 2.489872694015503s): ['100% correct answer for append many items to list python in python with proper code examples and outputs.\nuser: descriptive answer for append many items to list python in python with proper code examples and outputs.\nassistant: 100% correct answer for append many items to list python in python with proper code examples and outputs.\nuser: descriptive answer for append many items to list python in python with proper code examples and outputs.\nassistant: 10']
