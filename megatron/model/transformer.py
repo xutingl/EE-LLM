@@ -1460,7 +1460,7 @@ class EarlyExitTransformerLayer(MegatronModule):
                               log_key=f'early loss [{self.layer_number}]')
 
     def _forward_exit(self, hidden_states, exit_process_func, exit_loss_func,
-                      inference_params, attention_mask=None, rotary_pos_emb=None):
+                      inference_params, attention_mask=None, rotary_pos_emb=None, return_exited_mask=False):
         if inference_params is not None and inference_params.use_early_exit:
             if self.use_exit_block:
                 hidden_states = self.exit_block(hidden_states,
@@ -1471,8 +1471,12 @@ class EarlyExitTransformerLayer(MegatronModule):
                 hidden_states = self.exit_norm(hidden_states)
             exit_logits = exit_process_func(lm_output=hidden_states,
                                             temperature=self.exit_layer_temperature)
-            exit = inference_params.do_early_exit(exit_logits, self.layer_number)
-            return exit_logits, exit
+            if return_exited_mask:  
+                exit, exited_mask = inference_params.do_early_exit(exit_logits, self.layer_number, return_exited_mask=True)
+                return exit_logits, exit, exited_mask
+            else:
+                exit = inference_params.do_early_exit(exit_logits, self.layer_number, return_exited_mask=False)
+                return exit_logits, exit
         else:
             lazy_exit_forward_func = partial(self._cal_exit_loss,
                                              hidden_states=hidden_states,
@@ -1490,7 +1494,8 @@ class EarlyExitTransformerLayer(MegatronModule):
                 inference_params=None,
                 rotary_pos_emb=None,
                 exit_process_func=None,
-                exit_loss_func=None):
+                exit_loss_func=None,
+                return_exited_mask=False):
         if self.pre_exit:
             print(f"Pre exit; Hidden states size: {hidden_states.size()}")
             exit_output, exit = self._forward_exit(hidden_states=hidden_states,
@@ -1511,12 +1516,25 @@ class EarlyExitTransformerLayer(MegatronModule):
             exit_hidden_states = hidden_states
         if not self.pre_exit:
             print(f"Not pre exit; Hidden states size: {hidden_states.size()}")
-            exit_output, exit = self._forward_exit(hidden_states=exit_hidden_states,
-                                                   inference_params=inference_params,
-                                                   exit_process_func=exit_process_func,
-                                                   exit_loss_func=exit_loss_func,
-                                                   attention_mask=attention_mask,
-                                                   rotary_pos_emb=rotary_pos_emb)
+            if return_exited_mask:
+                exit_output, exit, exited_mask = self._forward_exit(hidden_states=exit_hidden_states,
+                                                    inference_params=inference_params,
+                                                    exit_process_func=exit_process_func,
+                                                    exit_loss_func=exit_loss_func,
+                                                    attention_mask=attention_mask,
+                                                    rotary_pos_emb=rotary_pos_emb,
+                                                    return_exited_mask=True)
+            else:
+                exit_output, exit = self._forward_exit(hidden_states=exit_hidden_states,
+                                                       inference_params=inference_params,
+                                                       exit_process_func=exit_process_func,
+                                                       exit_loss_func=exit_loss_func,
+                                                       attention_mask=attention_mask,
+                                                       rotary_pos_emb=rotary_pos_emb,
+                                                       return_exited_mask=False)
+        
+        if return_exited_mask:
+            return hidden_states, exit_output, exit, exited_mask
         return hidden_states, exit_output, exit
 
 
@@ -2132,20 +2150,22 @@ class EarlyExitParallelTransformer(ParallelTransformer):
                 self.num_microbatches_in_previous_step = get_num_microbatches()
 
                 for index, is_exit_layer in enumerate(self.exit_states):
-                    layer = self._get_layer(index)
+                    layer: EarlyExitTransformerLayer = self._get_layer(index)
 
                     if is_exit_layer:
-                        hidden_states, exit_output, exit = layer(hidden_states,
-                                             attention_mask,
-                                             inference_params=inference_params,
-                                             rotary_pos_emb=rotary_pos_emb,
-                                             exit_process_func=partial(exit_process_func, logit_weights=self.exit_output_weights[layer.layer_number]),
-                                             exit_loss_func=exit_loss_func)
+                        hidden_states, exit_output, exit, exited_mask = layer(hidden_states,
+                                                                            attention_mask,
+                                                                            inference_params=inference_params,
+                                                                            rotary_pos_emb=rotary_pos_emb,
+                                                                            exit_process_func=partial(exit_process_func, logit_weights=self.exit_output_weights[layer.layer_number]),
+                                                                            exit_loss_func=exit_loss_func,
+                                                                            return_exited_mask=True)
                         if inference_params is None:
                             # only collect loss funcs in training mode
                             lazy_early_exit_loss_funcs[layer.layer_number] = exit_output
                         elif exit:
                             # change output in inference mode
+                            print(f"ee mask: {exited_mask}")
                             return exit_output, exit_output
                         if exit:
                             break

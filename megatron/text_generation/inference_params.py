@@ -1,6 +1,7 @@
 import torch
 import numpy as np
 import torch.nn.functional as F
+from typing import List
 
 from megatron import get_tokenizer, get_args
 from megatron.text_generation.sampling import sample
@@ -47,7 +48,7 @@ class InferenceParams:
         self.tokens = None
         self.probs = None
 
-    def do_early_exit(self, logits, layer_num):
+    def do_early_exit(self, logits, layer_num, return_exited_mask=False):
         if self.has_early_exited or self.prev_has_early_exited:
             return False
         if not (self.use_all_exit or (layer_num in self.exit_layers)):
@@ -57,6 +58,13 @@ class InferenceParams:
         max_log_prob, token_id =  torch.max(log_probs[:, :], dim=1)
         token = self.tokenizer.detokenize([int(token_id[-1])])
         self.has_early_exited = max_log_prob[-1] >= self.early_exit_thres
+
+        # For each max_log_prob, check if it is greater than early exit threshold
+        batch_size = len(max_log_prob)
+        exited_mask: List[int] = [0 for _ in range(batch_size)] # A list where item at index i = 1 iff request i in the batch wants to exit
+        for i in range(batch_size):
+            exited_mask[i] = 1 if max_log_prob[i] >= self.early_exit_thres else 0
+
         if self.print_max_probs:
             # print(f"layer [{layer_num}]: token [{token}], prob {float(torch.exp(max_log_prob[-1]))}")
             print(f"layer [{layer_num}], has_early_exited: {self.has_early_exited}, threshold {self.early_exit_thres}. Printing below   token: raw prob")
@@ -65,11 +73,15 @@ class InferenceParams:
             print(f"=============== tokens above has_early_exited: {self.has_early_exited} ======================")
             print()
         if self.use_pipeline_inference and self.has_early_exited:
+            if return_exited_mask:
+                raise NotImplementedError("exit mask doesn't work with pipeline inference for now")
             # send token and probs to the first stage
             tokens, probs = self.get_tokens_and_probs(last_token_logits)
             self.send_to_first_pipeline_stage(tokens, probs)
             return False
         else:
+            if return_exited_mask:
+                return self.has_early_exited, exited_mask
             return self.has_early_exited
 
     def get_tokens_and_probs(self, last_token_logits):
