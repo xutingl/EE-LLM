@@ -8,6 +8,8 @@ import torch
 import torch.nn.functional as F
 from typing import Optional
 from functools import partial
+from typing import List
+from collections import deque
 
 from megatron import get_timers, get_args, get_retro_args, core, get_num_microbatches
 from .module import MegatronModule
@@ -2090,6 +2092,12 @@ class EarlyExitParallelTransformer(ParallelTransformer):
         self.exit_states = list(map(lambda x: x in mpu.get_early_exit_layer_nums(), self.layer_nums))
         self.tune_exit = get_args().tune_exit
 
+        self.ee_leftover_cache_layer6 = torch.zeros(1, 2048) # Stores the hidden states of layer 6 that don't early exit
+        self.ee_leftover_cache_layer12 = torch.zeros(1, 2048)
+
+        self.hidden_states_ids_in_layer6_cache = deque([])
+        self.hidden_states_ids_in_layer12_cache = deque([])
+
 
     def _build_layer(self, layer_number, args, config, model_type, layer_type, self_attn_mask_type):
         assert args.transformer_impl == 'local', "early exit only supports transformer_impl=='local'"
@@ -2121,7 +2129,8 @@ class EarlyExitParallelTransformer(ParallelTransformer):
                 inference_params=None,
                 rotary_pos_emb=None,
                 exit_process_func=None,
-                exit_loss_func=None):
+                exit_loss_func=None,
+                req_ids: List[int] = [],):
         if not self.pre_process:
             hidden_states = self.input_tensor
 
@@ -2166,6 +2175,29 @@ class EarlyExitParallelTransformer(ParallelTransformer):
                         elif exit:
                             # change output in inference mode
                             print(f"ee mask: {exited_mask}")
+                            # We want to return request ids along with exit states in order to manage the buffer.
+                            if len(req_ids) > 0:
+                                # All requests want to EE. Nothing goes into buffer
+                                if sum(exited_mask) == len(exited_mask):
+                                    return exit_output, exit_output, req_ids
+                                # Requests that don't want to EE go into buffer. Return the hidden states of the request that EE, alogn with their ids
+                                if index == 5:
+                                    print("-------------")
+                                    print(hidden_states[~exited_mask])
+                                    print("-------------")
+                                    print(req_ids[~exited_mask])
+                                    print()
+
+                                    self.ee_leftover_cache_layer6 = hidden_states[~exited_mask]
+                                    self.hidden_states_ids_in_layer6_cache.extend(req_ids[~exited_mask])
+
+                                    return exit_output, exit_output, req_ids
+                                elif index == 11:
+                                    return exit_output, exit_output, req_ids
+                                else:
+                                    raise ValueError("Early exit layer not supported")
+
+                            # If request ids are not provoded, we just return the output
                             return exit_output, exit_output
                         if exit:
                             break

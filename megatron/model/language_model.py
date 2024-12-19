@@ -710,7 +710,7 @@ class EarlyExitTransformerLanguageModel(TransformerLanguageModel):
                 rotary_pos_emb = self.rotary_pos_emb(self.seq_length)
 
         # Run encoder.
-        encoder_output, early_exit_output = self.encoder(
+        encoder_output, early_exit_output, early_exit_ids = self.encoder(
             encoder_input,
             enc_attn_mask,
             retriever_input=retriever_input,
@@ -718,7 +718,8 @@ class EarlyExitTransformerLanguageModel(TransformerLanguageModel):
             inference_params=inference_params,
             rotary_pos_emb=rotary_pos_emb,
             exit_process_func=exit_process_func,
-            exit_loss_func=exit_loss_func)
+            exit_loss_func=exit_loss_func,
+            req_ids=[0,1],)
 
         return encoder_output, early_exit_output
 
