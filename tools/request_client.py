@@ -6,7 +6,7 @@ URL = "http://localhost:5000/api"
 HEADER = {
     "Content-Type": "application/json; charset=UTF-8",
 }
-BATCH_SIZE = 4
+BATCH_SIZE = 2
 SEED = 42
 PROMPTS_FILE = "tools/prompt_lmsys_chat_4.jsonl"
 
@@ -37,7 +37,8 @@ def request(
                 "random_seed": SEED,
                 "echo_prompts": False,
                 "early_exit_thres": early_exit_thres,
-                "exit_layers": exit_layers
+                "exit_layers": exit_layers,
+                "prompt_idx": i
             }
             if use_early_exit:
                 data["use_early_exit"] = True
@@ -69,7 +70,7 @@ def request(
                 "random_seed": SEED,
                 "echo_prompts": False,
                 "early_exit_thres": early_exit_thres,
-                "exit_layers": exit_layers
+                "exit_layers": exit_layers,
             }
             if use_early_exit:
                 data["use_early_exit"] = True

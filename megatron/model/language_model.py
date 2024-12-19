@@ -689,7 +689,8 @@ class EarlyExitTransformerLanguageModel(TransformerLanguageModel):
                 pooling_sequence_index=0,
                 enc_hidden_states=None, output_enc_hidden=False,
                 exit_process_func=None,
-                exit_loss_func=None):
+                exit_loss_func=None,
+                req_ids=[],):
         # Encoder embedding.
         if self.pre_process:
             encoder_input = self.embedding(enc_input_ids, enc_position_ids,
@@ -710,6 +711,7 @@ class EarlyExitTransformerLanguageModel(TransformerLanguageModel):
                 rotary_pos_emb = self.rotary_pos_emb(self.seq_length)
 
         # Run encoder.
+        print(f"processing req_ids: {req_ids}")
         encoder_output, early_exit_output, early_exit_ids = self.encoder(
             encoder_input,
             enc_attn_mask,
@@ -719,9 +721,9 @@ class EarlyExitTransformerLanguageModel(TransformerLanguageModel):
             rotary_pos_emb=rotary_pos_emb,
             exit_process_func=exit_process_func,
             exit_loss_func=exit_loss_func,
-            req_ids=[0,1],)
+            req_ids=req_ids,)
 
-        return encoder_output, early_exit_output
+        return encoder_output, early_exit_output, early_exit_ids
 
     def state_dict_for_save_checkpoint(self, prefix='', keep_vars=False):
         """For easy load."""

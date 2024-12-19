@@ -43,7 +43,7 @@ class ForwardStep:
             args.inference_batch_times_seqlen_threshold
 
 
-    def __call__(self, tokens, position_ids, attention_mask):
+    def __call__(self, tokens, position_ids, attention_mask, req_ids=[]):
         """Invocation of the forward methods. Note that self.inference_params
         is being modified by the forward step."""
         # Pipelining case.
@@ -58,7 +58,8 @@ class ForwardStep:
                                            tokens,
                                            position_ids,
                                            attention_mask,
-                                           self.inference_params)
+                                           self.inference_params,
+                                           req_ids=req_ids)
 
 
 
@@ -83,7 +84,7 @@ def _allocate_recv_buffer(batch_size, sequence_length):
 
 
 def _forward_step_helper(model, tokens, position_ids, attention_mask,
-                         inference_params, recv_buffer=None):
+                         inference_params, recv_buffer=None, req_ids=[]):
     """Single forward step. Update the allocate memory flag so
     only the first time the memory is allocated."""
     batch_size = tokens.size(0)
@@ -96,23 +97,23 @@ def _forward_step_helper(model, tokens, position_ids, attention_mask,
 
     # Forward pass through the model.
     model.set_input_tensor(recv_buffer)
-    output_tensor = model(tokens, position_ids, attention_mask,
-                          inference_params=inference_params)
+    output_tensor, early_exit_ids = model(tokens, position_ids, attention_mask,
+                          inference_params=inference_params, req_ids=req_ids)
 
     # Send output to the next stage.
     send_to_next_pipeline_rank(output_tensor)
 
-    return output_tensor
+    return output_tensor, early_exit_ids
 
 
 
 def _no_pipelining_forward_step(model, tokens, position_ids, attention_mask,
-                                inference_params, recv_buffer=None):
+                                inference_params, recv_buffer=None, req_ids=[]):
     """If recv_buffer is none, we will allocate one on the fly."""
     # Run a simple forward pass.
     output_tensor = _forward_step_helper(model, tokens, position_ids,
                                          attention_mask, inference_params,
-                                         recv_buffer=recv_buffer)
+                                         recv_buffer=recv_buffer, req_ids=req_ids)
     # Update the sequence length offset.
     # inference_params.sequence_len_offset += tokens.size(1)
 

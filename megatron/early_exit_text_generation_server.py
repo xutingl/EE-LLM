@@ -18,6 +18,7 @@ class MegatronGenerate(Resource):
         self.model = model
         asyncio.set_event_loop(asyncio.new_event_loop())
         self.loop = asyncio.get_event_loop()
+        self.prompt_index = 0
 
     @staticmethod
     def send_do_generate():
@@ -40,6 +41,8 @@ class MegatronGenerate(Resource):
     async def generate(self, req):
         MegatronGenerate.send_do_generate()  # Tell other ranks we're doing generate
         start_time = time.time()
+        if 'prompt_idx' in req:
+            self.prompt_index = int(req['prompt_idx'])
         response, response_seg, response_logprobs, _ = \
             generate_and_post_process(
             self.model,
@@ -60,7 +63,8 @@ class MegatronGenerate(Resource):
             early_exit_thres=req['early_exit_thres'],
             use_early_exit=req['use_early_exit'],
             print_max_prob=req['print_max_prob'],
-            exit_layers=req['exit_layers'])
+            exit_layers=req['exit_layers'],
+            prompts_starting_index=self.prompt_index,)
         end_time = time.time()
         print(f"Response(use {end_time - start_time}s): " + str(response))
         return {

@@ -103,8 +103,8 @@ def generate_tokens_probs_and_return_on_first_stage(
         early_exit_thres=1.0,
         use_early_exit=False,
         print_max_prob=False,
-        exit_layers=[]
-        ):
+        exit_layers=[],
+        req_ids=[],):
     """Main token generation function.
     Arguments:
         model: no interleaving is supported.
@@ -206,7 +206,7 @@ def generate_tokens_probs_and_return_on_first_stage(
                 ..., full_exit_context_length:context_length, :context_length]
 
             # logits will be meanigful only in the last pipeline stage.
-            logits = forward_step(tokens2use, positions2use, attention_mask2use)
+            logits, early_exit_ids = forward_step(tokens2use, positions2use, attention_mask2use, req_ids=req_ids)
 
             if mpu.is_pipeline_last_stage():
                 if prevent_newline_after_colon:

@@ -2182,23 +2182,22 @@ class EarlyExitParallelTransformer(ParallelTransformer):
                                     return exit_output, exit_output, req_ids
                                 # Requests that don't want to EE go into buffer. Return the hidden states of the request that EE, alogn with their ids
                                 if index == 5:
-                                    print("-------------")
-                                    print(hidden_states[~exited_mask])
-                                    print("-------------")
-                                    print(req_ids[~exited_mask])
-                                    print()
-
-                                    self.ee_leftover_cache_layer6 = hidden_states[~exited_mask]
-                                    self.hidden_states_ids_in_layer6_cache.extend(req_ids[~exited_mask])
-
+                                    for index, exited in enumerate(exited_mask):
+                                        if exited:
+                                            self.ee_leftover_cache_layer6 = hidden_states[:,index,:]
+                                            self.hidden_states_ids_in_layer6_cache.append(req_ids[index])
                                     return exit_output, exit_output, req_ids
                                 elif index == 11:
+                                    for index, exited in enumerate(exited_mask):
+                                        if exited:
+                                            self.ee_leftover_cache_layer12 = hidden_states[:,index,:]
+                                            self.hidden_states_ids_in_layer12_cache.append(req_ids[index])
                                     return exit_output, exit_output, req_ids
                                 else:
                                     raise ValueError("Early exit layer not supported")
 
                             # If request ids are not provoded, we just return the output
-                            return exit_output, exit_output
+                            return exit_output, exit_output, None
                         if exit:
                             break
                     else:
@@ -2213,5 +2212,7 @@ class EarlyExitParallelTransformer(ParallelTransformer):
         if self.post_process and self.post_norm:
             hidden_states = self.final_norm(hidden_states)
 
-        return hidden_states, lazy_early_exit_loss_funcs
+        if len(req_ids) > 0:
+            return hidden_states, lazy_early_exit_loss_funcs, req_ids
+        return hidden_states, lazy_early_exit_loss_funcs, None
  

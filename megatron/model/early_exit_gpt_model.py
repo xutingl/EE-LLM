@@ -146,8 +146,8 @@ class EarlyExitGPTModel(MegatronModule):
                 retriever_attn_mask=None,
                 labels=None, tokentype_ids=None,
                 inference_params=None,
-                exit_loss_func=None):
-
+                exit_loss_func=None,
+                req_ids=[],):
         early_exit_output = list()
         if self.has_early_exit:
             exit_process_func = partial(
@@ -157,7 +157,7 @@ class EarlyExitGPTModel(MegatronModule):
                 fp16_lm_cross_entropy=self.fp16_lm_cross_entropy
             )
 
-            lm_output, early_exit_output = self.language_model(
+            lm_output, early_exit_output, early_exit_ids = self.language_model(
                 input_ids,
                 position_ids,
                 attention_mask,
@@ -166,7 +166,8 @@ class EarlyExitGPTModel(MegatronModule):
                 retriever_attn_mask=retriever_attn_mask,
                 inference_params=inference_params,
                 exit_process_func=exit_process_func,
-                exit_loss_func=exit_loss_func)
+                exit_loss_func=exit_loss_func,
+                req_ids=req_ids)
         else:
             lm_output = self.language_model(
                 input_ids,
@@ -178,7 +179,7 @@ class EarlyExitGPTModel(MegatronModule):
                 inference_params=inference_params)
 
         if inference_params is not None and inference_params.has_early_exited:
-            return lm_output
+            return lm_output, early_exit_ids
         elif self.post_process:
             lm_output = post_language_model_processing(
                 lm_output, labels,
@@ -188,7 +189,7 @@ class EarlyExitGPTModel(MegatronModule):
         if self.has_early_exit and inference_params is None:
             return lm_output, early_exit_output
         else:
-            return lm_output
+            return lm_output, None
 
     def state_dict_for_save_checkpoint(self, prefix='', keep_vars=False):
 

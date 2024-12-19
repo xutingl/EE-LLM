@@ -38,7 +38,8 @@ def generate_and_post_process(model,
                               early_exit_thres=1.0,
                               use_early_exit=False,
                               print_max_prob=False,
-                              exit_layers=[]):
+                              exit_layers=[],
+                              prompts_starting_index=0):
     """Run inference and post-process outputs, i.e., detokenize,
     move to cpu and convert to list."""
 
@@ -64,7 +65,8 @@ def generate_and_post_process(model,
         early_exit_thres=early_exit_thres,
         use_early_exit=use_early_exit,
         print_max_prob=print_max_prob,
-        exit_layers=exit_layers)
+        exit_layers=exit_layers,
+        prompts_starting_index=prompts_starting_index,)
 
     # Only post-process on first stage.
     if mpu.is_pipeline_first_stage():
@@ -107,7 +109,8 @@ def generate(model,
              early_exit_thres=1.0,
              use_early_exit=False,
              print_max_prob=False,
-             exit_layers=[]):
+             exit_layers=[],
+             prompts_starting_index=0):
     """Given prompts and input parameters, run inference and return:
        tokens: prompts plus the generated tokens.
        lengths: length of the prompt + generations. Note that we can
@@ -115,6 +118,8 @@ def generate(model,
            corresponding length.
        output_log_probs: log probs of the tokens.
     """
+
+    req_ids = [prompts_starting_index + i for i in range(len(prompts))]
 
     # Make sure input params are avaialble to all ranks.
     values = [tokens_to_generate,
@@ -218,7 +223,8 @@ def generate(model,
                 early_exit_thres=early_exit_thres,
                 use_early_exit=use_early_exit,
                 print_max_prob=print_max_prob,
-                exit_layers=exit_layers)
+                exit_layers=exit_layers,
+                req_ids=req_ids,)
     except Exception as e:
         traceback.print_exc()
     return output
