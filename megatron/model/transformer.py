@@ -2131,6 +2131,20 @@ class EarlyExitParallelTransformer(ParallelTransformer):
                 exit_process_func=None,
                 exit_loss_func=None,
                 req_ids: List[int] = [],):
+        
+        if len(req_ids) == 0:
+            # Rebatching is disabled when no req_ids is provided
+            return self.forward_without_rebatching(hidden_states, attention_mask,
+                                                   encoder_output=encoder_output,
+                                                   enc_dec_attn_mask=enc_dec_attn_mask,
+                                                   retriever_input=retriever_input,
+                                                   retriever_output=retriever_output,
+                                                   retriever_attn_mask=retriever_attn_mask,
+                                                   inference_params=inference_params,
+                                                   rotary_pos_emb=rotary_pos_emb,
+                                                   exit_process_func=exit_loss_func,
+                                                   exit_loss_func=exit_loss_func)
+
         if not self.pre_process:
             hidden_states = self.input_tensor
 
@@ -2214,5 +2228,85 @@ class EarlyExitParallelTransformer(ParallelTransformer):
 
         if len(req_ids) > 0:
             return hidden_states, lazy_early_exit_loss_funcs, req_ids
+        return hidden_states, lazy_early_exit_loss_funcs, None
+    
+    """
+    The original EE-LLM forward method. No rebatching.
+    """
+    def forward_without_rebatching(self, hidden_states, attention_mask,
+            encoder_output=None, enc_dec_attn_mask=None,
+            retriever_input=None,
+            retriever_output=None,
+            retriever_attn_mask=None,
+            inference_params=None,
+            rotary_pos_emb=None,
+            exit_process_func=None,
+            exit_loss_func=None):
+        if not self.pre_process:
+            hidden_states = self.input_tensor
+
+        hidden_states = core.utils.make_viewless_tensor(
+            hidden_states,
+            requires_grad=True,
+            keep_graph=True,
+        )
+        lazy_early_exit_loss_funcs = dict()
+
+        # RNG context.
+        if self.sequence_parallel:
+            rng_context = tensor_parallel.get_cuda_rng_tracker().fork()
+        else:
+            rng_context = nullcontext()
+
+        # Forward layers.
+        with rng_context:
+            with transformer_engine.pytorch.fp8_autocast(
+                enabled=self.use_fp8,
+                fp8_recipe=self.fp8_recipe,
+                fp8_group=self.fp8_group
+            ) if self.use_fp8 else nullcontext():
+                if self.num_microbatches_in_previous_step != get_num_microbatches():
+                    self.microbatch_count = 0 # Reset count on new batch size rampup interval
+                self.num_microbatches_in_previous_step = get_num_microbatches()
+
+                for index, is_exit_layer in enumerate(self.exit_states):
+                    layer = self._get_layer(index)
+                    layer: EarlyExitTransformerLayer = self._get_layer(index)
+
+                    if is_exit_layer:
+                        hidden_states, exit_output, exit = layer(hidden_states,
+                                            attention_mask,
+                                            inference_params=inference_params,
+                                            rotary_pos_emb=rotary_pos_emb,
+                                            exit_process_func=partial(exit_process_func, logit_weights=self.exit_output_weights[layer.layer_number]),
+                                            exit_loss_func=exit_loss_func)
+                        hidden_states, exit_output, exit, exited_mask = layer(hidden_states,
+                                                                            attention_mask,
+                                                                            inference_params=inference_params,
+                                                                            rotary_pos_emb=rotary_pos_emb,
+                                                                            exit_process_func=partial(exit_process_func, logit_weights=self.exit_output_weights[layer.layer_number]),
+                                                                            exit_loss_func=exit_loss_func,
+                                                                            return_exited_mask=True)
+                        if inference_params is None:
+                            # only collect loss funcs in training mode
+                            lazy_early_exit_loss_funcs[layer.layer_number] = exit_output
+                        elif exit:
+                            # change output in inference mode
+                            print(f"ee mask (0: doesn't want to EE, 1: wants to EE): {exited_mask}")
+                            return exit_output, exit_output
+                        if exit:
+                            break
+                    else:
+                        hidden_states = layer(hidden_states,
+                                            attention_mask,
+                                            inference_params=inference_params,
+                                            rotary_pos_emb=rotary_pos_emb)
+
+                if (torch.is_grad_enabled() or self.tune_exit) and self.training:
+                    self.microbatch_count += 1
+
+        if self.post_process and self.post_norm:
+            hidden_states = self.final_norm(hidden_states)
+
         return hidden_states, lazy_early_exit_loss_funcs, None
  
