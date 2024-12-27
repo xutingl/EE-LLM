@@ -2074,6 +2074,52 @@ class ParallelTransformer(MegatronModule):
 
         super().load_state_dict(state_dict_, strict)
 
+class HiddenStatesBuffer():
+    """
+    A buffer that stores hidden states
+    """
+
+    def __init__(self, batch_size: int, capacity: int, hidden_state_length: int=2048):
+        self.batch_size = batch_size
+        self.capacity = capacity
+        self.hidden_states = torch.zeros(self.capacity, hidden_state_length) # [capacity, hidden_state_length]
+        self.available_slots = set(range(self.capacity))
+        self.hidden_states_map = dict() # keys: req_ids, values: indices in hidden_states.
+    
+    def add_hidden_states(self, hidden_states: torch.Tensor, req_ids: List[int]):
+        num_hidden_states = hidden_states.size(0)
+        assert num_hidden_states + len(self.hidden_states_map) <= self.capacity, "Not enough capacity in hidden states buffer"
+        assert self.hidden_states.size(1) == hidden_states.size(1), "Hidden states have different lengths, buffer requires size {self.hidden_states.size(1)} but got {hidden_states.size(1)}"
+
+        # Find available slots in hidden_states and put hidden states in them
+        for i in range(num_hidden_states):
+            slot = self.available_slots.pop()
+            self.hidden_states[slot] = hidden_states[i]
+            self.hidden_states_map[req_ids[i]] = slot
+    
+    def take_hidden_states(self, num: int=0):
+        if num == 0:
+            num = self.batch_size
+        assert num <= len(self.hidden_states_map), "Not enough hidden states in buffer"
+        
+        output_hidden_states = torch.zeros(num, self.hidden_states.size(1))
+        output_req_ids = []
+        
+        # FIFO order: take hidden states from the left of the hidden_states_map
+        num_taken = 0
+        for req_id, slot in list(self.hidden_states_map.items())[:num]:
+            output_hidden_states[num_taken] = self.hidden_states[slot]
+            self.available_slots.add(slot)
+            self.hidden_states_map.pop(req_id)
+            output_req_ids.append(req_id)
+            num_taken += 1
+        
+        return output_hidden_states, output_req_ids
+        
+    def __len__(self):
+        return len(self.hidden_states_map)
+
+
 class EarlyExitParallelTransformer(ParallelTransformer):
     """Early-exit Transformer class."""
 
@@ -2092,11 +2138,20 @@ class EarlyExitParallelTransformer(ParallelTransformer):
         self.exit_states = list(map(lambda x: x in mpu.get_early_exit_layer_nums(), self.layer_nums))
         self.tune_exit = get_args().tune_exit
 
-        self.ee_leftover_cache_layer6 = torch.zeros(1, 2048) # Stores the hidden states of layer 6 that don't early exit
-        self.ee_leftover_cache_layer12 = torch.zeros(1, 2048)
+        self.batch_size = 2
 
-        self.hidden_states_ids_in_layer6_cache = deque([])
-        self.hidden_states_ids_in_layer12_cache = deque([])
+        self.buffer_layer0: HiddenStatesBuffer = HiddenStatesBuffer(self.batch_size, self.batch_size * 4)
+        self.buffer_layer5: HiddenStatesBuffer = HiddenStatesBuffer(self.batch_size, self.batch_size * 2)
+        self.buffer_layer11: HiddenStatesBuffer = HiddenStatesBuffer(self.batch_size, self.batch_size * 2)
+
+        # self.buffer_layer0 = torch.zeros(self.batch_size * 4, 2048) # Stores the hidden states that have not been processed because we are pritorizing layer 11 and layer 5
+
+        # self.ee_buffer_layer5 = torch.zeros(self.batch_size * 2, 2048) # Stores the hidden states of layer 6 that don't early exit
+        # self.ee_buffer_layer11 = torch.zeros(self.batch_size * 2, 2048)
+
+        # self.hidden_states_ids_in_layer0_buffer = deque([])
+        # self.hidden_states_ids_in_layer5_buffer = deque([])
+        # self.hidden_states_ids_in_layer11_buffer = deque([])
 
 
     def _build_layer(self, layer_number, args, config, model_type, layer_type, self_attn_mask_type):
@@ -2121,6 +2176,15 @@ class EarlyExitParallelTransformer(ParallelTransformer):
     def set_exit_output_weights(self, exit_output_weights):
         self.exit_output_weights = exit_output_weights
 
+    def do_forward_at_layer_index(self, hidden_states, attention_mask, layer_index: int):
+        return None
+
+    """
+    When req_ids is provided, rebatching based on early exit status is enabled:
+    - We check layer11 buffer first, then layer5 buffer, to see if there are enough hidden states to form a batch. If there are, we will process and return them.
+    - If all requests want to EE, no rebatching is done.
+    - If some requests want to EE, they are returned immediately, and the rest are put into a buffer.
+    """
     def forward(self, hidden_states, attention_mask,
                 encoder_output=None, enc_dec_attn_mask=None,
                 retriever_input=None,
@@ -2172,7 +2236,23 @@ class EarlyExitParallelTransformer(ParallelTransformer):
                     self.microbatch_count = 0 # Reset count on new batch size rampup interval
                 self.num_microbatches_in_previous_step = get_num_microbatches()
 
-                for index, is_exit_layer in enumerate(self.exit_states):
+                # Check buffer_layer11 and buffer_layer5. If there are enough hidden states, put iput hidden states into layer0 buffer. Take hidden states from layer11 or layer 5 out, process them at corrresponding layer.
+                start_at_layer = 0
+                if len(self.buffer_layer11) >= self.batch_size:
+                    self.buffer_layer0.add_hidden_states(hidden_states[0], req_ids)
+                    hidden_states, req_ids = self.buffer_layer11.take_hidden_states()
+                    hidden_states.unsqueeze_(0) # transform <batch_size, 2048> to <1, batch_size, 2048>
+
+                    start_at_layer = 11
+                elif len(self.buffer_layer5) >= self.batch_size:
+                    self.buffer_layer0.add_hidden_states(hidden_states[0], req_ids)
+                    hidden_states, req_ids = self.buffer_layer5.take_hidden_states()
+                    hidden_states.unsqueeze_(0)
+
+                    start_at_layer = 5
+
+                # exit_states is true only at pos 5 and pos 11
+                for index, is_exit_layer in enumerate(self.exit_states[start_at_layer:]):
                     layer: EarlyExitTransformerLayer = self._get_layer(index)
 
                     if is_exit_layer:
@@ -2197,23 +2277,25 @@ class EarlyExitParallelTransformer(ParallelTransformer):
                                 # Requests that don't want to EE go into buffer. Return the hidden states of the request that EE, alogn with their ids
                                 if index == 5:
                                     for index, exited in enumerate(exited_mask):
-                                        if exited:
-                                            self.ee_leftover_cache_layer6 = hidden_states[:,index,:]
-                                            self.hidden_states_ids_in_layer6_cache.append(req_ids[index])
+                                        if not exited:
+                                            self.buffer_layer5.add_hidden_states(hidden_states[0][index,:], [req_ids[index]])
+                                    
+                                    # [TODO] change exit_output and req_ids to be the hidden states of the requests that EE
                                     return exit_output, exit_output, req_ids
                                 elif index == 11:
                                     for index, exited in enumerate(exited_mask):
-                                        if exited:
-                                            self.ee_leftover_cache_layer12 = hidden_states[:,index,:]
-                                            self.hidden_states_ids_in_layer12_cache.append(req_ids[index])
+                                        if not exited:
+                                            self.buffer_layer11.add_hidden_states(hidden_states[0][index,:], [req_ids[index]])
                                     return exit_output, exit_output, req_ids
                                 else:
                                     raise ValueError("Early exit layer not supported")
 
                             # If request ids are not provoded, we just return the output
                             return exit_output, exit_output, None
-                        if exit:
-                            break
+                        
+                        # I think the following 2 lines are redundant
+                        # if exit:
+                        #     break
                     else:
                         hidden_states = layer(hidden_states,
                                             attention_mask,
