@@ -8,7 +8,7 @@ HEADER = {
 }
 BATCH_SIZE = 2
 SEED = 42
-PROMPTS_FILE = "tools/prompt_lmsys_chat_4.jsonl"
+PROMPTS_FILE = "tools/prompt_lmsys_chat_12.jsonl"
 
 
 def request(

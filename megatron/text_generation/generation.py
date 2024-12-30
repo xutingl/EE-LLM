@@ -206,7 +206,8 @@ def generate_tokens_probs_and_return_on_first_stage(
                 ..., full_exit_context_length:context_length, :context_length]
 
             # logits will be meanigful only in the last pipeline stage.
-            logits, early_exit_ids = forward_step(tokens2use, positions2use, attention_mask2use, req_ids=req_ids)
+            logits, exited_req_ids = forward_step(tokens2use, positions2use, attention_mask2use, req_ids=req_ids)
+            print(f"exited_req_ids: {exited_req_ids}")
 
             if mpu.is_pipeline_last_stage():
                 if prevent_newline_after_colon:
@@ -229,7 +230,15 @@ def generate_tokens_probs_and_return_on_first_stage(
                 # If a prompt length is smaller or equal th current context
                 # length, it means we have started generating tokens
                 started = lengths <= context_length
+
                 # Update the tokens.
+                print(f"tokens size: {tokens.size()}")
+                print(f"new sample size: {new_sample.size()}")
+                # [TODO]Match the tokens to be the req_ids that EE:
+                # 1. Remove the tokens with the req_ids that are not in exited_req_ids (through slicing)
+                # 2. The removed tokens are stored in the dictinary buffered_tokens ({req_id: tokens}).
+                # 3. If exited_req_ids contains req_ids that are not in the original req_ids, we need to fetch that tokens from buffered_tokens and append the tokens together.
+
                 tokens[started, context_length] = new_sample[started]
 
                 # Calculate the log probabilities.
