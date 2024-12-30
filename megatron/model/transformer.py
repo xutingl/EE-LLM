@@ -2087,6 +2087,8 @@ class HiddenStatesBuffer():
         self.hidden_states_map = dict() # keys: req_ids, values: indices in hidden_states.
     
     def add_hidden_states(self, hidden_states: torch.Tensor, req_ids: List[int]):
+        print(f"adding hidden states. size: {hidden_states.size()}, req_ids: {req_ids}")
+        return
         num_hidden_states = hidden_states.size(0)
         assert num_hidden_states + len(self.hidden_states_map) <= self.capacity, "Not enough capacity in hidden states buffer"
         assert self.hidden_states.size(1) == hidden_states.size(1), "Hidden states have different lengths, buffer requires size {self.hidden_states.size(1)} but got {hidden_states.size(1)}"
@@ -2263,29 +2265,38 @@ class EarlyExitParallelTransformer(ParallelTransformer):
                                                                             exit_process_func=partial(exit_process_func, logit_weights=self.exit_output_weights[layer.layer_number]),
                                                                             exit_loss_func=exit_loss_func,
                                                                             return_exited_mask=True)
+                        # When req_ids is not provided, exit is True iff the last req in the batch wants to EE
+                        # When req_ids is provided, exit is True iff at least 1 req in the batch want to EE
+                        if len(req_ids) > 0:
+                            exit = any(exited_mask)
+
                         if inference_params is None:
                             # only collect loss funcs in training mode
                             lazy_early_exit_loss_funcs[layer.layer_number] = exit_output
                         elif exit:
                             # change output in inference mode
                             print(f"ee mask: {exited_mask}")
+                            exited_idx = torch.tensor([i for i, val in enumerate(exited_mask) if val])
                             # We want to return request ids along with exit states in order to manage the buffer.
                             if len(req_ids) > 0:
                                 # All requests want to EE. Nothing goes into buffer
                                 if sum(exited_mask) == len(exited_mask):
                                     return exit_output, exit_output, req_ids
                                 # Requests that don't want to EE go into buffer. Return the hidden states of the request that EE, alogn with their ids
+                                exited_req_ids = [req_ids[i] for i in exited_idx]
                                 if index == 5:
                                     for index, exited in enumerate(exited_mask):
                                         if not exited:
                                             self.buffer_layer5.add_hidden_states(hidden_states[0][index,:], [req_ids[index]])
                                     
-                                    # [TODO] change exit_output and req_ids to be the hidden states of the requests that EE
+                                    return exit_output[exited_idx,:,:], exit_output[exited_idx,:,:], exited_req_ids
                                     return exit_output, exit_output, req_ids
                                 elif index == 11:
                                     for index, exited in enumerate(exited_mask):
                                         if not exited:
                                             self.buffer_layer11.add_hidden_states(hidden_states[0][index,:], [req_ids[index]])
+                                            
+                                    return exit_output[exited_idx,:,:], exit_output[exited_idx,:,:], exited_req_ids
                                     return exit_output, exit_output, req_ids
                                 else:
                                     raise ValueError("Early exit layer not supported")
