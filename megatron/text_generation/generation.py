@@ -207,10 +207,12 @@ def generate_tokens_probs_and_return_on_first_stage(
                 ..., full_exit_context_length:context_length, :context_length]
 
             # logits will be meanigful only in the last pipeline stage.
+            print(f"[generate_tokens_probs] tokens2use size: {tokens2use.size()}")
             logits, exited_req_ids = forward_step(tokens2use, positions2use, attention_mask2use, req_ids=req_ids)
-            print(f"exited_req_ids: {exited_req_ids}")
 
             if mpu.is_pipeline_last_stage():
+                print(f"[generate_tokens_probs] exited_req_ids : {exited_req_ids}")
+                print(f"[generate_tokens_probs] logits size: {logits.size()}")
                 if prevent_newline_after_colon:
                     logits[tokens2use[:, -1] == tokenizer.tokenize(':')[0], -1, tokenizer.tokenize('\n')[0]] = -1e10 # disable "\n" after ":"
                 # Always the last stage should have an output.
@@ -243,6 +245,10 @@ def generate_tokens_probs_and_return_on_first_stage(
                 if len(exited_idx) != len(req_ids): # Not all requests exited: we need to buffer the tokens of the requests that are not exited
                     # Step 1
                     exited_tokens = tokens[exited_idx, :]
+                    print(f"original started: {started}")
+                    started = started[exited_idx]
+                    print(f"new started: {started}")
+
 
                     # Step 2
                     for i, req_id in enumerate(req_ids):
@@ -256,7 +262,11 @@ def generate_tokens_probs_and_return_on_first_stage(
                     if len(req_ids_to_be_appended) > 0:
                         for req_id in req_ids_to_be_appended:
                             tokens = torch.cat((tokens, buffered_tokens[req_id].unsqueeze(0)), dim=0)
-                    
+                
+                print(f"new tokens size: {tokens.size()}")
+                print(f"new sample size: {new_sample.size()}")
+                print(f"used started: {started}")
+                print(f"context_length: {context_length}")
                 tokens[started, context_length] = new_sample[started]
 
                 # Calculate the log probabilities.

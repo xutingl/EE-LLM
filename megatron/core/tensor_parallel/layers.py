@@ -330,6 +330,7 @@ class LinearWithGradAccumulationAndAsyncCommunication(torch.autograd.Function):
         else:
             total_input = input
 
+        print(f"[megatron core tensor_parallel layers.py] total_input size: {total_input.size()}, weight: {weight.size()}, {weight.t().size()}")
         output = torch.matmul(total_input, weight.t())
         if bias is not None:
             output = output + bias

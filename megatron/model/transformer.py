@@ -2289,19 +2289,22 @@ class EarlyExitParallelTransformer(ParallelTransformer):
                                         if not exited:
                                             self.buffer_layer5.add_hidden_states(hidden_states[0][index,:], [req_ids[index]])
                                     
+                                    print(f"[EarlyExitParallelTransformer forward return 1] exited_idx: {exited_idx}, exited_req_ids: {exited_req_ids}, exit_output size: {exit_output.size()}, size after slicing: {exit_output[exited_idx,:,:].size()}")
                                     return exit_output[exited_idx,:,:], exit_output[exited_idx,:,:], exited_req_ids
                                     return exit_output, exit_output, req_ids
                                 elif index == 11:
                                     for index, exited in enumerate(exited_mask):
                                         if not exited:
                                             self.buffer_layer11.add_hidden_states(hidden_states[0][index,:], [req_ids[index]])
-                                            
+                                    
+                                    print(f"[EarlyExitParallelTransformer forward return 2] exited_idx: {exited_idx}, exited_req_ids: {exited_req_ids}, exit_output size: {exit_output.size()}, size after slicing: {exit_output[exited_idx,:,:].size()}")
                                     return exit_output[exited_idx,:,:], exit_output[exited_idx,:,:], exited_req_ids
                                     return exit_output, exit_output, req_ids
                                 else:
                                     raise ValueError("Early exit layer not supported")
 
                             # If request ids are not provoded, we just return the output
+                            print(f"[EarlyExitParallelTransformer forward return 3] exited_idx: {exited_idx}, exited_req_ids: {exited_req_ids}, exit_output size: {exit_output.size()}, size after slicing: {exit_output[exited_idx,:,:].size()}")
                             return exit_output, exit_output, None
                         
                         # I think the following 2 lines are redundant
