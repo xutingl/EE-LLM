@@ -104,7 +104,8 @@ def generate_tokens_probs_and_return_on_first_stage(
         use_early_exit=False,
         print_max_prob=False,
         exit_layers=[],
-        req_ids=[],):
+        req_ids=[],
+        buffered_tokens={},):
     """Main token generation function.
     Arguments:
         model: no interleaving is supported.
@@ -238,7 +239,24 @@ def generate_tokens_probs_and_return_on_first_stage(
                 # 1. Remove the tokens with the req_ids that are not in exited_req_ids (through slicing)
                 # 2. The removed tokens are stored in the dictinary buffered_tokens ({req_id: tokens}).
                 # 3. If exited_req_ids contains req_ids that are not in the original req_ids, we need to fetch that tokens from buffered_tokens and append the tokens together.
+                exited_idx = [i for i, req_id in enumerate(req_ids) if req_id in exited_req_ids] # the idx of the tokens that exited
+                if len(exited_idx) != len(req_ids): # Not all requests exited: we need to buffer the tokens of the requests that are not exited
+                    # Step 1
+                    exited_tokens = tokens[exited_idx, :]
 
+                    # Step 2
+                    for i, req_id in enumerate(req_ids):
+                        if req_id not in exited_req_ids:
+                            buffered_tokens[req_id] = tokens[i]
+                    
+                    tokens = exited_tokens
+
+                    # Step 3
+                    req_ids_to_be_appended = [req_id for req_id in exited_req_ids if req_id not in req_ids]
+                    if len(req_ids_to_be_appended) > 0:
+                        for req_id in req_ids_to_be_appended:
+                            tokens = torch.cat((tokens, buffered_tokens[req_id].unsqueeze(0)), dim=0)
+                    
                 tokens[started, context_length] = new_sample[started]
 
                 # Calculate the log probabilities.
@@ -320,7 +338,7 @@ def generate_tokens_probs_and_return_on_first_stage(
         if return_output_log_probs:
             for i, (prob, length) in enumerate(zip(output_log_probs, lengths)):
                 output_log_probs[i] = prob.roll(-(length.item() - 1), dims=0)
-    return tokens, generated_sequence_lengths, output_log_probs, None
+    return tokens, generated_sequence_lengths, output_log_probs, None, exited_req_ids, buffered_tokens
 
 def beam_search_and_return_on_first_stage(model, tokens, lengths, beam_size, stop_token, num_return_gen, length_penalty, prevent_newline_after_colon=True):
     args = get_args()
@@ -553,10 +571,8 @@ def generate_with_pipelined_early_exit_and_return_on_first_stage(
     # Run infernece
     # =============
 
-    print("????????????????????")
 
     with torch.no_grad():
-        print("#########################")
         attention_mask, position_ids = _build_attention_mask_and_position_ids(
             tokens)
         prev_context_length = 0

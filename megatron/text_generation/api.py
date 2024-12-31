@@ -39,12 +39,13 @@ def generate_and_post_process(model,
                               use_early_exit=False,
                               print_max_prob=False,
                               exit_layers=[],
-                              prompts_starting_index=0):
+                              prompts_starting_index=0,
+                              buffered_tokens={},):
     """Run inference and post-process outputs, i.e., detokenize,
     move to cpu and convert to list."""
 
     # Main inference.
-    tokens, lengths, output_log_probs, logits = generate(
+    tokens, lengths, output_log_probs, logits, exited_req_ids, buffered_tokens = generate(
         model,
         prompts=prompts,
         tokens_to_generate=tokens_to_generate,
@@ -66,7 +67,8 @@ def generate_and_post_process(model,
         use_early_exit=use_early_exit,
         print_max_prob=print_max_prob,
         exit_layers=exit_layers,
-        prompts_starting_index=prompts_starting_index,)
+        prompts_starting_index=prompts_starting_index,
+        buffered_tokens=buffered_tokens,)
 
     # Only post-process on first stage.
     if mpu.is_pipeline_first_stage():
@@ -85,7 +87,7 @@ def generate_and_post_process(model,
             output_log_probs, tokens, logits
         else:
             return prompts_plus_generations, prompts_plus_generations_segments, \
-                output_log_probs, tokens
+                output_log_probs, tokens, exited_req_ids, buffered_tokens
 
     return None
 
@@ -110,7 +112,8 @@ def generate(model,
              use_early_exit=False,
              print_max_prob=False,
              exit_layers=[],
-             prompts_starting_index=0):
+             prompts_starting_index=0,
+             buffered_tokens={},):
     """Given prompts and input parameters, run inference and return:
        tokens: prompts plus the generated tokens.
        lengths: length of the prompt + generations. Note that we can
@@ -224,7 +227,8 @@ def generate(model,
                 use_early_exit=use_early_exit,
                 print_max_prob=print_max_prob,
                 exit_layers=exit_layers,
-                req_ids=req_ids,)
+                req_ids=req_ids,
+                buffered_tokens=buffered_tokens,)
     except Exception as e:
         traceback.print_exc()
     return output

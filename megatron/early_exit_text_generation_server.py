@@ -19,6 +19,7 @@ class MegatronGenerate(Resource):
         asyncio.set_event_loop(asyncio.new_event_loop())
         self.loop = asyncio.get_event_loop()
         self.prompt_index = 0
+        self.buffered_tokens = {}
 
     @staticmethod
     def send_do_generate():
@@ -43,7 +44,7 @@ class MegatronGenerate(Resource):
         start_time = time.time()
         if 'prompt_idx' in req:
             self.prompt_index = int(req['prompt_idx'])
-        response, response_seg, response_logprobs, _ = \
+        response, response_seg, response_logprobs, _, exited_req_ids, self.buffered_tokens = \
             generate_and_post_process(
             self.model,
             prompts=req['prompts'],
@@ -64,11 +65,13 @@ class MegatronGenerate(Resource):
             use_early_exit=req['use_early_exit'],
             print_max_prob=req['print_max_prob'],
             exit_layers=req['exit_layers'],
-            prompts_starting_index=self.prompt_index,)
+            prompts_starting_index=self.prompt_index,
+            buffered_tokens=self.buffered_tokens,)
         end_time = time.time()
         print(f"Response(use {end_time - start_time}s): " + str(response))
         return {
             "text": response,
+            "exited_req_ids": exited_req_ids,
             "segments": response_seg,
             "logprobs": response_logprobs,
             "requst_time": end_time - start_time
