@@ -711,7 +711,7 @@ class EarlyExitTransformerLanguageModel(TransformerLanguageModel):
                 rotary_pos_emb = self.rotary_pos_emb(self.seq_length)
 
         # Run encoder.
-        print(f"processing req_ids: {req_ids}")
+        print(f"[Early]processing req_ids: {req_ids}")
         encoder_output, early_exit_output, early_exit_ids = self.encoder(
             encoder_input,
             enc_attn_mask,

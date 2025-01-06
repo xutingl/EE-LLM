@@ -103,6 +103,8 @@ def _forward_step_helper(model, tokens, position_ids, attention_mask,
     # Send output to the next stage.
     send_to_next_pipeline_rank(output_tensor)
 
+    print(f"[ForwardStep: _forward_step_helper] returning output_tensor size: {output_tensor.size()}, early_exit_ids: {early_exit_ids}")
+
     return output_tensor, early_exit_ids
 
 

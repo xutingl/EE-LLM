@@ -105,7 +105,7 @@ def generate_tokens_probs_and_return_on_first_stage(
         print_max_prob=False,
         exit_layers=[],
         req_ids=[],
-        buffered_tokens={},):
+        buffered_tokens:dict[int, torch.Tensor]={},):
     """Main token generation function.
     Arguments:
         model: no interleaving is supported.
@@ -158,7 +158,7 @@ def generate_tokens_probs_and_return_on_first_stage(
     
     print("batch_size", batch_size)
     # forward step.
-    forward_step = ForwardStep(model, inference_params=inference_params)
+    forward_step = ForwardStep(model, inference_params=inference_params) # EarlyExitGPTModel.forward
 
     # Added termination_id to support the case that we want to terminate the
     # generation once that id is generated.
@@ -213,6 +213,7 @@ def generate_tokens_probs_and_return_on_first_stage(
             if mpu.is_pipeline_last_stage():
                 print(f"[generate_tokens_probs] exited_req_ids : {exited_req_ids}")
                 print(f"[generate_tokens_probs] logits size: {logits.size()}")
+                assert len(exited_req_ids) == logits.size(0), "[generate_tokens_probs] error! length of exited_req_ids should be equal to the batch size of logits (size at idx 0)"
                 if prevent_newline_after_colon:
                     logits[tokens2use[:, -1] == tokenizer.tokenize(':')[0], -1, tokenizer.tokenize('\n')[0]] = -1e10 # disable "\n" after ":"
                 # Always the last stage should have an output.
@@ -238,30 +239,49 @@ def generate_tokens_probs_and_return_on_first_stage(
                 print(f"tokens size: {tokens.size()}")
                 print(f"new sample size: {new_sample.size()}")
                 # [TODO]Match the tokens to be the req_ids that EE:
-                # 1. Remove the tokens with the req_ids that are not in exited_req_ids (through slicing)
-                # 2. The removed tokens are stored in the dictinary buffered_tokens ({req_id: tokens}).
-                # 3. If exited_req_ids contains req_ids that are not in the original req_ids, we need to fetch that tokens from buffered_tokens and append the tokens together.
-                exited_idx = [i for i, req_id in enumerate(req_ids) if req_id in exited_req_ids] # the idx of the tokens that exited
-                if len(exited_idx) != len(req_ids): # Not all requests exited: we need to buffer the tokens of the requests that are not exited
-                    # Step 1
-                    exited_tokens = tokens[exited_idx, :]
-                    print(f"original started: {started}")
-                    started = started[exited_idx]
-                    print(f"new started: {started}")
 
+                exited_batch_size = len(exited_req_ids)
+                assert exited_batch_size == new_sample.size(0), "[generate_tokens_probs] error! exited_batch_size should be equal to the batch size of new_sample (size at idx 0)"
+                assert exited_batch_size > 0, "[generate_tokens_probs] error! exited_batch_size should be greater than 0"
 
-                    # Step 2
-                    for i, req_id in enumerate(req_ids):
-                        if req_id not in exited_req_ids:
-                            buffered_tokens[req_id] = tokens[i]
+                # Check if exited_req_ids are identical to req_ids
+                output_identical = len(exited_req_ids) == len(req_ids)
+                if output_identical:
+                    for idx in range(len(req_ids)):
+                        if exited_req_ids[idx] != req_ids[idx]:
+                            output_identical = False
+                            break
+                
+                if not output_identical:
+                    # Step 1: Create tokens_before_generation to replace `tokens`. Each tensor in `tokens` has req_id corresponding to req_ids while each tensor in `tokens_before_generation` has req_id corresponding to exited_req_ids
+                    tokens_before_generation = torch.zeros(exited_batch_size, tokens.size(1), dtype=tokens.dtype, device=tokens.device)
+                    new_started = torch.zeros(exited_batch_size, dtype=torch.bool, device=started.device)
+                    idx_of_tokens_to_be_put_in_buffered_tokens = list(range(len(req_ids)))
+                    for position_idx, exited_req_id in enumerate(exited_req_ids):
+                        if exited_req_id in req_ids:
+                            # Locate token in tokens and assign it to the corresponding position in tokens_before_generation
+                            pos_idx_in_tokens = req_ids.index(exited_req_id)
+                            tokens_before_generation[position_idx] = tokens[pos_idx_in_tokens].clone()
+                            new_started[position_idx] = started[pos_idx_in_tokens]
+
+                            # Remove the token from the list of tokens to be put in buffered_tokens
+                            idx_of_tokens_to_be_put_in_buffered_tokens.remove(pos_idx_in_tokens)
+                        else:
+                            # Find the token in buffered_tokens and assign it to the corresponding position in tokens_before_generation
+                            # started status must be True
+                            assert exited_req_id in buffered_tokens, "[generate_tokens_probs] error! exited_req_id should be in buffered_tokens"
+                            tokens_before_generation[position_idx] = buffered_tokens[exited_req_id].clone()
+                            new_started[position_idx] = True
                     
-                    tokens = exited_tokens
-
-                    # Step 3
-                    req_ids_to_be_appended = [req_id for req_id in exited_req_ids if req_id not in req_ids]
-                    if len(req_ids_to_be_appended) > 0:
-                        for req_id in req_ids_to_be_appended:
-                            tokens = torch.cat((tokens, buffered_tokens[req_id].unsqueeze(0)), dim=0)
+                    # Step 2: Put tokens that are not in exited_req_ids to buffered_tokens
+                    for position_idx in idx_of_tokens_to_be_put_in_buffered_tokens:
+                        req_id = req_ids[position_idx]
+                        buffered_tokens[req_id] = tokens[position_idx].clone()
+                    
+                    # Step 3: Update tokens
+                    tokens = tokens_before_generation
+                    started = new_started
+                
                 
                 print(f"new tokens size: {tokens.size()}")
                 print(f"new sample size: {new_sample.size()}")

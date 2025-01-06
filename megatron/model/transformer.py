@@ -2267,15 +2267,16 @@ class EarlyExitParallelTransformer(ParallelTransformer):
                                                                             return_exited_mask=True)
                         # When req_ids is not provided, exit is True iff the last req in the batch wants to EE
                         # When req_ids is provided, exit is True iff at least 1 req in the batch want to EE
+                        print(f"[EarlyExitParallelTransformer forward] exit: {exit}")
                         if len(req_ids) > 0:
-                            exit = any(exited_mask)
+                            exit = exit or any(exited_mask)
 
                         if inference_params is None:
                             # only collect loss funcs in training mode
                             lazy_early_exit_loss_funcs[layer.layer_number] = exit_output
                         elif exit:
                             # change output in inference mode
-                            print(f"ee mask: {exited_mask}")
+                            print(f"[EarlyExitParallelTransformer forward] exited_mask: {exited_mask}")
                             exited_idx = torch.tensor([i for i, val in enumerate(exited_mask) if val])
                             # We want to return request ids along with exit states in order to manage the buffer.
                             if len(req_ids) > 0:

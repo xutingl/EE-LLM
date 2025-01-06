@@ -157,6 +157,7 @@ class EarlyExitGPTModel(MegatronModule):
                 fp16_lm_cross_entropy=self.fp16_lm_cross_entropy
             )
 
+            # self.language_model is EarlyExitTransformerLanguageModel: self.forward (in language_model.py)
             lm_output, early_exit_output, early_exit_ids = self.language_model(
                 input_ids,
                 position_ids,
@@ -179,7 +180,7 @@ class EarlyExitGPTModel(MegatronModule):
                 inference_params=inference_params)
 
         if inference_params is not None and inference_params.has_early_exited:
-            print(f"Returning early exit ids at early_exit_gpy_model: forward : {early_exit_ids}")
+            print(f"[EarlyExitGPYModel: forward] returning early_exit_ids: {early_exit_ids}")
             return lm_output, early_exit_ids
         elif self.post_process:
             lm_output = post_language_model_processing(
@@ -187,12 +188,12 @@ class EarlyExitGPTModel(MegatronModule):
                 self.output_weight,
                 self.parallel_output,
                 self.fp16_lm_cross_entropy)
-            print(f"doing post process!!!")
+            print(f"[EarlyExitGPYModel: forward] doing post process!!!")
         if self.has_early_exit and inference_params is None:
-            print(f"returning 1 !!!")
+            print(f"[EarlyExitGPYModel: forward] returning 1 !!!")
             return lm_output, early_exit_output
         else:
-            print(f"returning 2 !!!, early_exit_ids: {early_exit_ids}")
+            print(f"[EarlyExitGPYModel: forward] returning 2 !!!, early_exit_ids: {early_exit_ids}, inference_params.has_early_exited: {inference_params.has_early_exited}, lm_output size: {lm_output.size()}")
             return lm_output, early_exit_ids
 
     def state_dict_for_save_checkpoint(self, prefix='', keep_vars=False):
