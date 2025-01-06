@@ -711,7 +711,7 @@ class EarlyExitTransformerLanguageModel(TransformerLanguageModel):
                 rotary_pos_emb = self.rotary_pos_emb(self.seq_length)
 
         # Run encoder.
-        print(f"[Early]processing req_ids: {req_ids}")
+        print(f"[EarlyExitTransformerLanguageModel: forward] processing req_ids: {req_ids}")
         encoder_output, early_exit_output, early_exit_ids = self.encoder(
             encoder_input,
             enc_attn_mask,
@@ -722,7 +722,8 @@ class EarlyExitTransformerLanguageModel(TransformerLanguageModel):
             exit_process_func=exit_process_func,
             exit_loss_func=exit_loss_func,
             req_ids=req_ids,)
-
+        
+        print(f"[EarlyExitTransformerLanguageModel: forward] Returning early_exit_ids: {early_exit_ids}, encoder_output size: {encoder_output.size()}, early_exit_output size: {early_exit_output.size()}")
         return encoder_output, early_exit_output, early_exit_ids
 
     def state_dict_for_save_checkpoint(self, prefix='', keep_vars=False):
