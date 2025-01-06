@@ -1536,6 +1536,7 @@ class EarlyExitTransformerLayer(MegatronModule):
                                                        return_exited_mask=False)
         
         if return_exited_mask:
+            print(f"[EarlyExitTransformerLayer: forward] Returning hidden_states size: {hidden_states.size()}, exit_output size: {exit_output.size()}, exit: {exit}, exited_mask: {exited_mask}")
             return hidden_states, exit_output, exit, exited_mask
         return hidden_states, exit_output, exit
 
@@ -2088,10 +2089,10 @@ class HiddenStatesBuffer():
     
     def add_hidden_states(self, hidden_states: torch.Tensor, req_ids: List[int]):
         print(f"adding hidden states. size: {hidden_states.size()}, req_ids: {req_ids}")
-        return
+        print(f"[add_hidden_states] hidden_states size: {hidden_states.size()}")
         num_hidden_states = hidden_states.size(0)
-        assert num_hidden_states + len(self.hidden_states_map) <= self.capacity, "Not enough capacity in hidden states buffer"
-        assert self.hidden_states.size(1) == hidden_states.size(1), "Hidden states have different lengths, buffer requires size {self.hidden_states.size(1)} but got {hidden_states.size(1)}"
+        assert num_hidden_states + len(self.hidden_states_map) <= self.capacity, f"Not enough capacity in hidden states buffer. num_hidden_states: {num_hidden_states}, len(hidden_states_map): {len(self.hidden_states_map)}, capacity: {self.capacity}"
+        assert self.hidden_states.size(1) == hidden_states.size(1), f"Hidden states have different lengths, buffer requires size {self.hidden_states.size(1)} but got {hidden_states.size(1)}"
 
         # Find available slots in hidden_states and put hidden states in them
         for i in range(num_hidden_states):
@@ -2241,12 +2242,14 @@ class EarlyExitParallelTransformer(ParallelTransformer):
                 # Check buffer_layer11 and buffer_layer5. If there are enough hidden states, put iput hidden states into layer0 buffer. Take hidden states from layer11 or layer 5 out, process them at corrresponding layer.
                 start_at_layer = 0
                 if len(self.buffer_layer11) >= self.batch_size:
+                    print(f"[EarlyExitParallelTransformer forward] adding hidden states to layer0 buffer to proceed at l11. size: {hidden_states[0].size()}")
                     self.buffer_layer0.add_hidden_states(hidden_states[0], req_ids)
                     hidden_states, req_ids = self.buffer_layer11.take_hidden_states()
                     hidden_states.unsqueeze_(0) # transform <batch_size, 2048> to <1, batch_size, 2048>
 
                     start_at_layer = 11
                 elif len(self.buffer_layer5) >= self.batch_size:
+                    print(f"[EarlyExitParallelTransformer forward] adding hidden states to layer0 buffer to proceed at l5. size: {hidden_states[0].size()}")
                     self.buffer_layer0.add_hidden_states(hidden_states[0], req_ids)
                     hidden_states, req_ids = self.buffer_layer5.take_hidden_states()
                     hidden_states.unsqueeze_(0)
@@ -2286,17 +2289,19 @@ class EarlyExitParallelTransformer(ParallelTransformer):
                                 # Requests that don't want to EE go into buffer. Return the hidden states of the request that EE, alogn with their ids
                                 exited_req_ids = [req_ids[i] for i in exited_idx]
                                 if index == 5:
-                                    for index, exited in enumerate(exited_mask):
+                                    for pos_idx, exited in enumerate(exited_mask):
                                         if not exited:
-                                            self.buffer_layer5.add_hidden_states(hidden_states[0][index,:], [req_ids[index]])
+                                            print(f"[EarlyExitParallelTransformer forward] adding hidden states to layer5 buffer. size: {hidden_states[0][pos_idx,:].unsqueeze(0).size()}, original hidden states size: {hidden_states.size()}")
+                                            self.buffer_layer5.add_hidden_states(hidden_states[0][pos_idx,:].unsqueeze(0), [req_ids[pos_idx]])
                                     
                                     print(f"[EarlyExitParallelTransformer forward return 1] exited_idx: {exited_idx}, exited_req_ids: {exited_req_ids}, exit_output size: {exit_output.size()}, size after slicing: {exit_output[exited_idx,:,:].size()}")
                                     return exit_output[exited_idx,:,:], exit_output[exited_idx,:,:], exited_req_ids
                                     return exit_output, exit_output, req_ids
                                 elif index == 11:
-                                    for index, exited in enumerate(exited_mask):
+                                    for pos_idx, exited in enumerate(exited_mask):
                                         if not exited:
-                                            self.buffer_layer11.add_hidden_states(hidden_states[0][index,:], [req_ids[index]])
+                                            print(f"[EarlyExitParallelTransformer forward] adding hidden states to layer11 buffer. size: {hidden_states[0][pos_idx,:].size()}")
+                                            self.buffer_layer11.add_hidden_states(hidden_states[0][pos_idx,:].unsqueeze(0), [req_ids[pos_idx]])
                                     
                                     print(f"[EarlyExitParallelTransformer forward return 2] exited_idx: {exited_idx}, exited_req_ids: {exited_req_ids}, exit_output size: {exit_output.size()}, size after slicing: {exit_output[exited_idx,:,:].size()}")
                                     return exit_output[exited_idx,:,:], exit_output[exited_idx,:,:], exited_req_ids
