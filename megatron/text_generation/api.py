@@ -39,7 +39,7 @@ def generate_and_post_process(model,
                               use_early_exit=False,
                               print_max_prob=False,
                               exit_layers=[],
-                              prompts_starting_index=0,
+                              prompts_req_ids=[],
                               buffered_tokens={},):
     """Run inference and post-process outputs, i.e., detokenize,
     move to cpu and convert to list."""
@@ -67,7 +67,7 @@ def generate_and_post_process(model,
         use_early_exit=use_early_exit,
         print_max_prob=print_max_prob,
         exit_layers=exit_layers,
-        prompts_starting_index=prompts_starting_index,
+        prompts_req_ids=prompts_req_ids,
         buffered_tokens=buffered_tokens,)
 
     # Only post-process on first stage.
@@ -112,7 +112,7 @@ def generate(model,
              use_early_exit=False,
              print_max_prob=False,
              exit_layers=[],
-             prompts_starting_index=0,
+             prompts_req_ids=[],
              buffered_tokens={},):
     """Given prompts and input parameters, run inference and return:
        tokens: prompts plus the generated tokens.
@@ -122,7 +122,7 @@ def generate(model,
        output_log_probs: log probs of the tokens.
     """
 
-    req_ids = [prompts_starting_index + i for i in range(len(prompts))]
+    req_ids = prompts_req_ids
 
     # Make sure input params are avaialble to all ranks.
     values = [tokens_to_generate,

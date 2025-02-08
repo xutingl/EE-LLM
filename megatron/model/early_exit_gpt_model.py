@@ -148,6 +148,9 @@ class EarlyExitGPTModel(MegatronModule):
                 inference_params=None,
                 exit_loss_func=None,
                 req_ids=[],):
+        if len(req_ids) > 0:
+            assert input_ids.size(0) == len(req_ids), \
+                f"input_ids.size(0)={input_ids.size(0)} != len(req_ids)={len(req_ids)}. input_ids size: {input_ids.size()}, req_ids: {req_ids}"
         early_exit_output = list()
         if self.has_early_exit:
             exit_process_func = partial(

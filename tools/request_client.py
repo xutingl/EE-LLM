@@ -8,7 +8,7 @@ HEADER = {
 }
 BATCH_SIZE = 2
 SEED = 42
-PROMPTS_FILE = "tools/prompt_lmsys_chat_4.jsonl"
+PROMPTS_FILE = "tools/prompt_lmsys_chat_2.jsonl"
 
 
 def request(
@@ -26,7 +26,8 @@ def request(
         for i in range(0, length, BATCH_SIZE):
             batch_prompts = prompts[i : i + BATCH_SIZE]
 
-            print(f"Batch {i} of size {len(batch_prompts)}: {batch_prompts}")
+            req_ids = list(range(i, i + len(batch_prompts)))
+            print(f"[Sending request] Batch {i} of size {len(batch_prompts)} (req_ids = {req_ids}): {batch_prompts}")
 
             data = {
                 "prompts": batch_prompts,
@@ -38,7 +39,7 @@ def request(
                 "echo_prompts": False,
                 "early_exit_thres": early_exit_thres,
                 "exit_layers": exit_layers,
-                "prompt_idx": i
+                #"prompts_req_ids": req_ids
             }
             if use_early_exit:
                 data["use_early_exit"] = True
@@ -47,8 +48,8 @@ def request(
             start_time = time.time()
             response = requests.put(URL, headers=HEADER, data=json.dumps(data))
             end_time = time.time()
-            print("Request:-------------------------------------------------")
             for i in range(len(batch_prompts)):
+                print("Request:-------------------------------------------------")
                 print(f"{batch_prompts[i]}")
                 print(
                     f"Response:------------------({end_time - start_time:.4f}s)-------------------"
@@ -56,6 +57,7 @@ def request(
                 try:
                     print(f'{response.json()["text"][i]}')
                 except Exception as e:
+                    print(f"Error: {e}")
                     print(response)
                 print("----------------------------------------------------------")
 

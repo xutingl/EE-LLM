@@ -711,7 +711,7 @@ class EarlyExitTransformerLanguageModel(TransformerLanguageModel):
                 rotary_pos_emb = self.rotary_pos_emb(self.seq_length)
 
         # Run encoder.
-        print(f"[EarlyExitTransformerLanguageModel: forward] processing req_ids: {req_ids}")
+        print(f"[EarlyExitTransformerLanguageModel: forward] processing req_ids: {req_ids}, encoder_input size: {encoder_input.size()}, enc_attn_mask size: {enc_attn_mask.size()}")
         encoder_output, early_exit_output, early_exit_ids = self.encoder(
             encoder_input,
             enc_attn_mask,
@@ -724,8 +724,9 @@ class EarlyExitTransformerLanguageModel(TransformerLanguageModel):
             req_ids=req_ids,)
         
         print(f"[EarlyExitTransformerLanguageModel: forward] Returning early_exit_ids: {early_exit_ids}, encoder_output size: {encoder_output.size()}, early_exit_output {early_exit_output}")
-        if len(early_exit_ids) != encoder_output.size(1):
-            print(f"[EarlyExitTransformerLanguageModel: forward] !!!!!!!!Error!!!!!! length of early exit ids {len(early_exit_ids)} != encoder_output size(1): {encoder_output.size(1)}")
+        if len(early_exit_ids) > 0:
+            if len(early_exit_ids) != encoder_output.size(1):
+                print(f"[EarlyExitTransformerLanguageModel: forward] !!!!!!!!Error!!!!!! length of early exit ids {len(early_exit_ids)} != encoder_output size(1): {encoder_output.size(1)}")
             
         return encoder_output, early_exit_output, early_exit_ids
 

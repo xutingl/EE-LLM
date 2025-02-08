@@ -14,6 +14,19 @@ Our system supports two methods of training early-exit LLMs:
 
 Further details about the usage and functionalities of EE-LLM are introduced in the following.
 
+## Dynamic Re-batching
+Basic testing:
+1. Start the server:
+```
+./examples/ee_inference/ee_inference_server.sh
+```
+
+2. Send requests:
+```
+After the server is started, you can use `tools/request_client.py`
+```
+
+
 ## Installation
 
 The installation of EE-LLM is the same as Megatron-LM.

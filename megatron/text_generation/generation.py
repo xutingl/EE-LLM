@@ -105,7 +105,8 @@ def generate_tokens_probs_and_return_on_first_stage(
         print_max_prob=False,
         exit_layers=[],
         req_ids=[],
-        buffered_tokens:dict[int, torch.Tensor]={},):
+        buffered_tokens: dict[int, torch.Tensor]={},
+        lengths_dict: dict[int, int]={},):
     """Main token generation function.
     Arguments:
         model: no interleaving is supported.
@@ -139,6 +140,11 @@ def generate_tokens_probs_and_return_on_first_stage(
     batch_size = tokens.size(0)
     min_prompt_length = lengths.min().item()
     max_sequence_length = tokens.size(1)
+
+    # Populate lengths_dict
+    if len(req_ids) > 0:
+        for idx, req_id in enumerate(req_ids):
+            lengths_dict[req_id] = lengths[idx]
 
     if max_sequence_length > args.max_position_embeddings:
         raise ValueError(f"Length of prompt + tokens_to_generate ({max_sequence_length}) longer than allowed ({args.max_position_embeddings})")
@@ -199,6 +205,8 @@ def generate_tokens_probs_and_return_on_first_stage(
         prev_context_length = 0
         full_exit_context_length = 0
         for context_length in range(min_prompt_length, max_sequence_length):
+            batch_size = tokens.size(0)
+            print(f"[generate_tokens_probs] Starting the for loop. context_length: {context_length}, tokens size: {tokens.size()}, updated batch_size: {batch_size}")
 
             # Pick the slice that we need to pass through the network.
             tokens2use = tokens[:, full_exit_context_length:context_length]
@@ -213,7 +221,8 @@ def generate_tokens_probs_and_return_on_first_stage(
             if mpu.is_pipeline_last_stage():
                 print(f"[generate_tokens_probs] exited_req_ids : {exited_req_ids}")
                 print(f"[generate_tokens_probs] logits size: {logits.size()}")
-                assert len(exited_req_ids) == logits.size(0), "[generate_tokens_probs] error! length of exited_req_ids should be equal to the batch size of logits (size at idx 0)"
+                if len(exited_req_ids) > 0:
+                    assert len(exited_req_ids) == logits.size(0), "[generate_tokens_probs] error! length of exited_req_ids should be equal to the batch size of logits (size at idx 0)"
                 if prevent_newline_after_colon:
                     logits[tokens2use[:, -1] == tokenizer.tokenize(':')[0], -1, tokenizer.tokenize('\n')[0]] = -1e10 # disable "\n" after ":"
                 # Always the last stage should have an output.
@@ -241,8 +250,8 @@ def generate_tokens_probs_and_return_on_first_stage(
                 # [TODO]Match the tokens to be the req_ids that EE:
 
                 exited_batch_size = len(exited_req_ids)
-                assert exited_batch_size == new_sample.size(0), "[generate_tokens_probs] error! exited_batch_size should be equal to the batch size of new_sample (size at idx 0)"
-                assert exited_batch_size > 0, "[generate_tokens_probs] error! exited_batch_size should be greater than 0"
+                if len(exited_req_ids) > 0:
+                    assert exited_batch_size == new_sample.size(0), "[generate_tokens_probs] error! exited_batch_size should be equal to the batch size of new_sample (size at idx 0)"
 
                 # Check if exited_req_ids are identical to req_ids
                 output_identical = len(exited_req_ids) == len(req_ids)
@@ -304,6 +313,12 @@ def generate_tokens_probs_and_return_on_first_stage(
                     output_log_probs[:,
                                         prev_context_length:context_length] = \
                         torch.gather(log_probs, 2, indices).squeeze(2)
+            
+            # Update req_ids to be exited_req_ids. Update lengths accordingly
+            if len(req_ids) > 0:
+                req_ids = exited_req_ids
+                lengths = torch.tensor([lengths_dict[req_id] for req_id in req_ids], dtype=torch.int64, device=torch.cuda.current_device())
+                print(f"[generate_tokens_probs] updated req_ids (exited_req_ids of the previous generation): {req_ids}. Updated lengths: {lengths}")
 
             # Update the tokens on the first stage so the next input to
             # the network is correct.
@@ -630,10 +645,7 @@ def generate_with_pipelined_early_exit_and_return_on_first_stage(
                 if print_max_prob:
                     print(f"layer final: token [{token}], prob {float(torch.exp(max_log_prob[-1]))}")
                 inference_params.has_early_exited = max_log_prob[-1] >= inference_params.early_exit_thres
-                # Printout the max prob
-                print("!!!!!!!")
-                print(inference_params.has_early_exited)
-                print("!!!!!!!")
+
                 if inference_params.has_early_exited:
                     print("-----------------")
                     print(f"max log prob: {max_log_prob[-1]}, early exit thres: {inference_params.early_exit_thres}")

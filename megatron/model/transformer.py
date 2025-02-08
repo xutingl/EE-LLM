@@ -1462,7 +1462,7 @@ class EarlyExitTransformerLayer(MegatronModule):
                               log_key=f'early loss [{self.layer_number}]')
 
     def _forward_exit(self, hidden_states, exit_process_func, exit_loss_func,
-                      inference_params, attention_mask=None, rotary_pos_emb=None, return_exited_mask=False):
+                      inference_params, attention_mask=None, rotary_pos_emb=None, return_exited_mask=False, exit_partial_batch=False):
         if inference_params is not None and inference_params.use_early_exit:
             if self.use_exit_block:
                 hidden_states = self.exit_block(hidden_states,
@@ -1474,7 +1474,8 @@ class EarlyExitTransformerLayer(MegatronModule):
             exit_logits = exit_process_func(lm_output=hidden_states,
                                             temperature=self.exit_layer_temperature)
             if return_exited_mask:  
-                exit, exited_mask = inference_params.do_early_exit(exit_logits, self.layer_number, return_exited_mask=True)
+                exit, exited_mask = inference_params.do_early_exit(exit_logits, self.layer_number, return_exited_mask=True, exit_partial_batch=exit_partial_batch)
+                print(f"[EarlyExitTransformerLayer: _forward_exit] Returning exit_logits size: {exit_logits.size()}, exit: {exit}, exited_mask: {exited_mask}")
                 return exit_logits, exit, exited_mask
             else:
                 exit = inference_params.do_early_exit(exit_logits, self.layer_number, return_exited_mask=False)
@@ -1497,7 +1498,8 @@ class EarlyExitTransformerLayer(MegatronModule):
                 rotary_pos_emb=None,
                 exit_process_func=None,
                 exit_loss_func=None,
-                return_exited_mask=False):
+                return_exited_mask=False,
+                exit_partial_batch=False):
         if self.pre_exit:
             print(f"Pre exit; Hidden states size: {hidden_states.size()}")
             exit_output, exit = self._forward_exit(hidden_states=hidden_states,
@@ -1517,7 +1519,7 @@ class EarlyExitTransformerLayer(MegatronModule):
         else:
             exit_hidden_states = hidden_states
         if not self.pre_exit:
-            print(f"Not pre exit; Hidden states size: {hidden_states.size()}")
+            print(f"[EarlyExitTransformerLayer: forward] Not pre exit; Hidden states size: {hidden_states.size()}.")
             if return_exited_mask:
                 exit_output, exit, exited_mask = self._forward_exit(hidden_states=exit_hidden_states,
                                                     inference_params=inference_params,
@@ -1525,7 +1527,8 @@ class EarlyExitTransformerLayer(MegatronModule):
                                                     exit_loss_func=exit_loss_func,
                                                     attention_mask=attention_mask,
                                                     rotary_pos_emb=rotary_pos_emb,
-                                                    return_exited_mask=True)
+                                                    return_exited_mask=True,
+                                                    exit_partial_batch=exit_partial_batch)
             else:
                 exit_output, exit = self._forward_exit(hidden_states=exit_hidden_states,
                                                        inference_params=inference_params,
@@ -2083,21 +2086,22 @@ class HiddenStatesBuffer():
     def __init__(self, batch_size: int, capacity: int, hidden_state_length: int=2048):
         self.batch_size = batch_size
         self.capacity = capacity
-        self.hidden_states = torch.zeros(self.capacity, hidden_state_length) # [capacity, hidden_state_length]
+        # [WARNING!] hard code device
+        self.hidden_states = torch.zeros(self.capacity, hidden_state_length, device='cuda:0') # [capacity, hidden_state_length]
         self.available_slots = set(range(self.capacity))
         self.hidden_states_map = dict() # keys: req_ids, values: indices in hidden_states.
     
     def add_hidden_states(self, hidden_states: torch.Tensor, req_ids: List[int]):
-        print(f"adding hidden states. size: {hidden_states.size()}, req_ids: {req_ids}")
-        print(f"[add_hidden_states] hidden_states size: {hidden_states.size()}")
+        print(f"[add_hidden_states] adding hidden states. size: {hidden_states.size()}, req_ids: {req_ids}")
         num_hidden_states = hidden_states.size(0)
         assert num_hidden_states + len(self.hidden_states_map) <= self.capacity, f"Not enough capacity in hidden states buffer. num_hidden_states: {num_hidden_states}, len(hidden_states_map): {len(self.hidden_states_map)}, capacity: {self.capacity}"
         assert self.hidden_states.size(1) == hidden_states.size(1), f"Hidden states have different lengths, buffer requires size {self.hidden_states.size(1)} but got {hidden_states.size(1)}"
+        assert hidden_states.size(0) == len(req_ids), f"Number of hidden states({hidden_states.size(0)}) and req_ids({len(req_ids)}) do not match"
 
         # Find available slots in hidden_states and put hidden states in them
         for i in range(num_hidden_states):
             slot = self.available_slots.pop()
-            self.hidden_states[slot] = hidden_states[i]
+            self.hidden_states[slot] = hidden_states[i].clone()
             self.hidden_states_map[req_ids[i]] = slot
     
     def take_hidden_states(self, num: int=0):
@@ -2105,7 +2109,7 @@ class HiddenStatesBuffer():
             num = self.batch_size
         assert num <= len(self.hidden_states_map), "Not enough hidden states in buffer"
         
-        output_hidden_states = torch.zeros(num, self.hidden_states.size(1))
+        output_hidden_states = torch.zeros(num, self.hidden_states.size(1), device='cuda:0')
         output_req_ids = []
         
         # FIFO order: take hidden states from the left of the hidden_states_map
@@ -2116,7 +2120,7 @@ class HiddenStatesBuffer():
             self.hidden_states_map.pop(req_id)
             output_req_ids.append(req_id)
             num_taken += 1
-        
+        print(f"[take_hidden_states] output_hidden_states {output_hidden_states}")
         return output_hidden_states, output_req_ids
         
     def __len__(self):
@@ -2201,6 +2205,7 @@ class EarlyExitParallelTransformer(ParallelTransformer):
         
         if len(req_ids) == 0:
             # Rebatching is disabled when no req_ids is provided
+            print(f"[EarlyExitParallelTransformer forward] Calling no rebatching. hidden_states size: {hidden_states.size()}, req_ids: {req_ids}")
             return self.forward_without_rebatching(hidden_states, attention_mask,
                                                    encoder_output=encoder_output,
                                                    enc_dec_attn_mask=enc_dec_attn_mask,
@@ -2209,7 +2214,7 @@ class EarlyExitParallelTransformer(ParallelTransformer):
                                                    retriever_attn_mask=retriever_attn_mask,
                                                    inference_params=inference_params,
                                                    rotary_pos_emb=rotary_pos_emb,
-                                                   exit_process_func=exit_loss_func,
+                                                   exit_process_func=exit_process_func,
                                                    exit_loss_func=exit_loss_func)
 
         if not self.pre_process:
@@ -2249,15 +2254,18 @@ class EarlyExitParallelTransformer(ParallelTransformer):
 
                     start_at_layer = 11
                 elif len(self.buffer_layer5) >= self.batch_size:
-                    print(f"[EarlyExitParallelTransformer forward] adding hidden states to layer0 buffer to proceed at l5. size: {hidden_states[0].size()}")
+                    print(f"[EarlyExitParallelTransformer forward] adding hidden states to layer0 buffer to proceed at l5. size: {hidden_states[0].size()}, original hidden states size: {hidden_states.size()}, original hidden states: {hidden_states}")
+
                     self.buffer_layer0.add_hidden_states(hidden_states[0], req_ids)
                     hidden_states, req_ids = self.buffer_layer5.take_hidden_states()
                     hidden_states.unsqueeze_(0)
+                    print(f"[EarlyExitParallelTransformer forward] hidden states size after unsqueeze: {hidden_states.size()}, new req_ids: {req_ids}, new hidden states: {hidden_states}")
 
                     start_at_layer = 5
 
                 # exit_states is true only at pos 5 and pos 11
-                for index, is_exit_layer in enumerate(self.exit_states[start_at_layer:]):
+                for i, is_exit_layer in enumerate(self.exit_states[start_at_layer:]):
+                    index = i + start_at_layer
                     layer: EarlyExitTransformerLayer = self._get_layer(index)
 
                     if is_exit_layer:
@@ -2267,7 +2275,8 @@ class EarlyExitParallelTransformer(ParallelTransformer):
                                                                             rotary_pos_emb=rotary_pos_emb,
                                                                             exit_process_func=partial(exit_process_func, logit_weights=self.exit_output_weights[layer.layer_number]),
                                                                             exit_loss_func=exit_loss_func,
-                                                                            return_exited_mask=True)
+                                                                            return_exited_mask=True,
+                                                                            exit_partial_batch=True)
                         # When req_ids is not provided, exit is True iff the last req in the batch wants to EE
                         # When req_ids is provided, exit is True iff at least 1 req in the batch want to EE
                         print(f"[EarlyExitParallelTransformer forward] exit: {exit}")
@@ -2333,7 +2342,7 @@ class EarlyExitParallelTransformer(ParallelTransformer):
         return hidden_states, lazy_early_exit_loss_funcs, None
     
     """
-    The original EE-LLM forward method. No rebatching.
+    The original EE-LLM forward method. No rebatching. The only difference is that `[]` is returned as exit_req_ids.
     """
     def forward_without_rebatching(self, hidden_states, attention_mask,
             encoder_output=None, enc_dec_attn_mask=None,
@@ -2372,7 +2381,6 @@ class EarlyExitParallelTransformer(ParallelTransformer):
                 self.num_microbatches_in_previous_step = get_num_microbatches()
 
                 for index, is_exit_layer in enumerate(self.exit_states):
-                    layer = self._get_layer(index)
                     layer: EarlyExitTransformerLayer = self._get_layer(index)
 
                     if is_exit_layer:
@@ -2394,8 +2402,8 @@ class EarlyExitParallelTransformer(ParallelTransformer):
                             lazy_early_exit_loss_funcs[layer.layer_number] = exit_output
                         elif exit:
                             # change output in inference mode
-                            print(f"ee mask (0: doesn't want to EE, 1: wants to EE): {exited_mask}")
-                            return exit_output, exit_output
+                            print(f"[EarlyExitParallelTransformer: forward_without_rebatching] ee mask (0: doesn't want to EE, 1: wants to EE): {exited_mask}. Returning exit_output size: {exit_output.size()}")
+                            return exit_output, exit_output, []
                         if exit:
                             break
                     else:
@@ -2410,5 +2418,8 @@ class EarlyExitParallelTransformer(ParallelTransformer):
         if self.post_process and self.post_norm:
             hidden_states = self.final_norm(hidden_states)
 
-        return hidden_states, lazy_early_exit_loss_funcs, None
+        print(f"[EarlyExitParallelTransformer forward_without_rebatching] Returning. hidden_states size: {hidden_states.size()}, lazy_early_exit_loss_funcs: {lazy_early_exit_loss_funcs}")
+        # [WARNING] For no-re-batching mode, this didn't give error but gives wrong output: all '\n'
+        # return exit_output, exit_output, []
+        return hidden_states, lazy_early_exit_loss_funcs, []
  

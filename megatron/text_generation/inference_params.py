@@ -48,15 +48,19 @@ class InferenceParams:
         self.tokens = None
         self.probs = None
 
-    def do_early_exit(self, logits, layer_num, return_exited_mask=False):
+    def do_early_exit(self, logits, layer_num, return_exited_mask=False, exit_partial_batch=False):
         if self.has_early_exited or self.prev_has_early_exited:
+            if return_exited_mask:
+                return False, [0 for _ in range(len(logits))]
             return False
         if not (self.use_all_exit or (layer_num in self.exit_layers)):
+            if return_exited_mask:
+                return False, [0 for _ in range(len(logits))]
             return False
         last_token_logits = logits[:, -1, :]
         log_probs = F.log_softmax(last_token_logits, dim=1)
         max_log_prob, token_id =  torch.max(log_probs[:, :], dim=1)
-        token = self.tokenizer.detokenize([int(token_id[-1])])
+        # token = self.tokenizer.detokenize([int(token_id[-1])])
 
         # Old way to determine if I have early exited
         # self.has_early_exited = max_log_prob[-1] >= self.early_exit_thres
@@ -67,7 +71,7 @@ class InferenceParams:
         for i in range(batch_size):
             exited_mask[i] = 1 if max_log_prob[i] >= self.early_exit_thres else 0
         
-        if return_exited_mask:
+        if exit_partial_batch:
             self.has_early_exited = any(exited_mask)
         else:
             self.has_early_exited = max_log_prob[-1] >= self.early_exit_thres
@@ -78,6 +82,7 @@ class InferenceParams:
             for i in range(len(max_log_prob)):
                 print(f"{self.tokenizer.detokenize([int(token_id[i])])}: {max_log_prob[i]} - {float(torch.exp(max_log_prob[i]))}")
             print(f"[InferenceParams: do_early_exit] =====================================")
+        
         if self.use_pipeline_inference and self.has_early_exited:
             if return_exited_mask:
                 raise NotImplementedError("exit mask doesn't work with pipeline inference for now")
